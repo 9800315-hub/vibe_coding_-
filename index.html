@@ -275,6 +275,27 @@
   .main:has(.shop-scene){overflow-y:auto!important;overflow-x:hidden!important;padding-bottom:48px!important;}
   .shop-tip{margin-bottom:18px;}
 }
+
+/* iPad／平板橫向：讓長內容頁面在主區域內捲動，避免底部被裁切。 */
+@media (min-width:901px) and (max-width:1366px){
+  html,body{height:100%;overflow:hidden}
+  .app{height:100dvh;min-height:0;overflow:hidden}
+  .app .layout{height:calc(100dvh - 68px);min-height:0;grid-template-rows:minmax(0,1fr)}
+  .app .main{min-height:0;height:100%;max-height:100%;overflow-x:hidden}
+  .app .main:has(.raise-layout),
+  .app .main:has(.task-tabs),
+  .app .main:has(.dex-grid),
+  .app .main:has(.dex-empty),
+  .app .main:has(.shop-scene){
+    overflow-y:auto!important;
+    -webkit-overflow-scrolling:touch;
+    overscroll-behavior-y:contain;
+    padding-bottom:100px!important;
+  }
+  .app .main:has(.raise-layout) .raise-layout{height:auto;max-height:none}
+  .app .main:has(.raise-layout) .raise-grid{max-height:none;overflow:visible}
+  .app .main:has(.task-tabs) .task-list{max-height:none;overflow:visible;min-height:0}
+}
 </style>
 </head>
 <body>
