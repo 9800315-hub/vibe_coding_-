@@ -1,0 +1,545 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#e7eee0"><title>森之幻寵｜魔法森林的相遇</title>
+<style>
+:root{--ink:#425846;--muted:#7e9180;--sage:#a8bea2;--deep:#63856d;--cream:#f8f2e5;--wood:#d8b99b;--line:#dce6d8;--shadow:0 20px 65px #607a5b23}*{box-sizing:border-box}body{margin:0;font-family:'Noto Sans TC','Microsoft JhengHei',system-ui,sans-serif;color:var(--ink);background:#e9efe5}button{font:inherit;cursor:pointer}button:disabled{cursor:not-allowed;opacity:.5}button:focus-visible{outline:3px solid #7ba77d;outline-offset:3px}.hidden{display:none!important}.app{min-height:100vh;max-width:1500px;margin:auto;background:#f7f6ee;box-shadow:0 0 80px #496d4a1c}.topbar{height:84px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(20px,4vw,60px);background:#fcfbf5;border-bottom:1px solid #e3e9db;position:sticky;top:0;z-index:20}.brand{display:flex;align-items:center;gap:12px;font-family:Georgia,'Noto Serif TC',serif;font-size:23px;font-weight:800;letter-spacing:3px}.brand-emblem{width:44px;height:44px;display:grid;place-items:center;border-radius:15px;background:#e6eee0;font-size:25px}.topright{display:flex;gap:12px;align-items:center}.currency{border:1px solid #dce6d7;background:white;border-radius:25px;padding:10px 18px;color:#536f58;font-weight:800;display:flex;align-items:center;gap:9px}.currency .gem{color:#84aeb7;font-size:20px}.iconbtn{border:1px solid #dce6d7;background:white;border-radius:50%;width:42px;height:42px;font-size:20px;color:#64816c}.layout{display:grid;grid-template-columns:220px 1fr;min-height:calc(100vh - 84px)}.sidebar{background:#f3f5ec;border-right:1px solid #e1e8da;padding:30px 18px;display:flex;flex-direction:column;gap:8px}.nav{border:0;background:transparent;text-align:left;padding:16px 20px;border-radius:17px;color:#7b8d7e;font-weight:750;display:flex;gap:13px;align-items:center;font-size:15px}.nav .ico{font-size:22px}.nav.active{background:#dce9d8;color:#476a50;box-shadow:inset 4px 0 #80a68a}.nav:not(.active):hover{background:#e9efe5}.nav.future{opacity:.56}.sidebar-note{margin-top:auto;border-radius:18px;background:#e7eee2;padding:17px;font-size:12px;line-height:1.8;color:#7d947e}.main{min-width:0;padding:32px clamp(18px,3.5vw,54px) 60px}.eyebrow{font-size:12px;letter-spacing:4px;color:#88a08c;font-weight:800}.page-title{font-size:clamp(28px,3vw,39px);font-family:Georgia,'Noto Serif TC',serif;margin:7px 0 7px;letter-spacing:3px}.subtitle{color:#8a9988;font-size:14px;margin:0 0 23px;line-height:1.8}.hero{height:clamp(350px,40vw,500px);border-radius:28px;overflow:hidden;position:relative;isolation:isolate;box-shadow:var(--shadow);border:6px solid #fff}.forest{position:absolute;inset:0;background:linear-gradient(#a7cfbe 0%,#d7e7c4 47%,#c6d6a4 100%);transition:background .5s}.forest.night{background:linear-gradient(#192b4a 0%,#344963 48%,#536c66 100%)}.sun{position:absolute;width:115px;height:115px;top:46px;right:15%;border-radius:50%;background:#fff8cb;box-shadow:0 0 75px #fff6ba;opacity:.85}.night .sun{width:76px;height:76px;background:#f8f4d6;box-shadow:0 0 38px #f4f0d0;right:19%}.night .sun:after{content:'';position:absolute;left:24px;top:-11px;background:#243650;width:74px;height:75px;border-radius:50%}.hill{position:absolute;border-radius:50% 50% 0 0}.h1{width:110%;height:47%;bottom:-22%;left:-7%;background:#94b98e}.h2{width:90%;height:42%;bottom:-23%;right:-30%;background:#7ca887}.night .h1{background:#426c68}.night .h2{background:#345e5d}.tree{position:absolute;bottom:10%;width:150px;height:310px;filter:drop-shadow(0 12px 10px #33583d24)}.tree:before{content:'';position:absolute;width:24px;height:180px;background:#9a816b;left:65px;bottom:0;border-radius:20px}.tree:after{content:'';position:absolute;width:175px;height:220px;top:0;left:-10px;border-radius:50% 50% 45% 45%;background:radial-gradient(circle at 35% 30%,#b3d7aa,#6d9c7d 75%)}.night .tree:after{background:radial-gradient(circle at 35% 30%,#618e8d,#2e6669 75%)}.tree.t1{left:-38px;transform:scale(1.15)}.tree.t2{right:-40px;transform:scale(1.27)}.tree.t3{left:17%;bottom:19%;transform:scale(.52);opacity:.8}.tree.t4{right:19%;bottom:21%;transform:scale(.55);opacity:.8}.stars{position:absolute;inset:0;opacity:0;background-image:radial-gradient(#fff 1.4px,transparent 2px),radial-gradient(#fff8d0 1px,transparent 2px);background-size:77px 65px,112px 98px;background-position:12px 10px,48px 26px}.night .stars{opacity:.8}.mushroom{position:absolute;bottom:14%;font-size:45px;filter:drop-shadow(0 0 13px #e8f7a6)}.m1{left:11%}.m2{right:11%;font-size:37px}.flower{position:absolute;bottom:9%;font-size:25px;opacity:.8}.f1{left:28%}.f2{right:28%}.firefly{position:absolute;width:5px;height:5px;border-radius:50%;background:#fff7ac;box-shadow:0 0 13px 5px #fff7ac70;animation:float 4s ease-in-out infinite alternate}.firefly.a{left:23%;top:38%}.firefly.b{left:76%;top:53%;animation-delay:1.5s}.firefly.c{left:52%;top:24%;animation-delay:2.4s}.platform{position:absolute;width:300px;height:76px;left:50%;bottom:8%;transform:translateX(-50%);border-radius:50%;background:radial-gradient(ellipse,#f2e9cf 0%,#b9bba1 62%,#869c84 100%);box-shadow:0 12px 0 #779481,0 20px 25px #45664b60}.showcase{position:absolute;left:50%;bottom:16%;transform:translateX(-50%);width:min(38%,270px);height:66%;display:flex;align-items:end;justify-content:center;cursor:pointer;filter:drop-shadow(0 14px 11px #34583d30)}.showcase svg{width:100%;max-height:100%;overflow:visible}.showcase.bounce svg{animation:bounce .55s ease}.empty-altar{align-self:end;margin-bottom:35px;text-align:center;background:#ffffffb8;border:1px solid white;border-radius:20px;padding:20px 24px;color:#69806b;line-height:2}.speech{position:absolute;left:50%;bottom:75%;transform:translateX(-50%);background:#fffcf0;border-radius:20px;padding:11px 19px;font-size:13px;white-space:nowrap;box-shadow:0 5px 25px #405c5025;max-width:85%;text-overflow:ellipsis;overflow:hidden;z-index:2}.scene-label{position:absolute;left:23px;top:23px;border-radius:22px;background:#fffdf1c9;padding:9px 14px;font-size:12px;color:#6d826d}.scene-actions{position:absolute;right:20px;bottom:19px;display:flex;gap:8px}.pill{border:1px solid #e0e9dc;background:#fffef1e8;color:#55735c;border-radius:25px;padding:11px 18px;font-weight:750;font-size:13px}.pill:hover{background:white}.rowcards{display:grid;grid-template-columns:repeat(3,1fr);gap:17px;margin-top:20px}.mini-card{background:white;border:1px solid #e7e9dc;border-radius:22px;padding:22px;box-shadow:0 7px 25px #6880670c}.mini-card .emoji{font-size:29px}.mini-card h3{margin:9px 0 5px;font-size:17px}.mini-card p{margin:0;color:#8b9a8a;font-size:13px;line-height:1.7}.section-head{display:flex;justify-content:space-between;align-items:end;gap:12px;flex-wrap:wrap}.summon-wrap{display:grid;grid-template-columns:minmax(280px,1fr) minmax(290px,410px);gap:22px}.egg-stage{min-height:430px;border-radius:27px;position:relative;overflow:hidden;background:radial-gradient(circle at 50% 58%,#f9f6e7 0%,#e6eee0 42%,#c4dac5 100%);border:1px solid white;display:flex;flex-direction:column;align-items:center;justify-content:center}.egg-stage:before{content:'✧　✦　✧　✦　✧';position:absolute;top:20%;color:#b2c6a9;letter-spacing:25px}.magic-ring{width:290px;height:85px;border:3px solid #b6c6a6;border-radius:50%;position:absolute;bottom:61px;box-shadow:0 0 0 12px #dce7d183,0 0 35px #f9f4d9;transform:rotate(-6deg)}.big-egg{font-size:180px;z-index:1;filter:drop-shadow(0 16px 15px #748d7350);animation:float 3s ease-in-out infinite alternate;line-height:1}.stage-caption{position:absolute;bottom:23px;font-size:13px;color:#7b957e;letter-spacing:2px}.summon-panel{background:white;border:1px solid #e6ebdf;border-radius:27px;padding:27px;box-shadow:var(--shadow)}.summon-panel h2{margin:0 0 10px;font-size:23px}.summon-panel p{font-size:13px;line-height:1.9;color:#829383}.pity{margin:24px 0 10px;display:flex;justify-content:space-between;font-size:13px;font-weight:700}.progress{height:11px;border-radius:30px;background:#e7eee2;overflow:hidden}.progress>div{height:100%;background:linear-gradient(90deg,#a6c3a2,#6b9a79);border-radius:30px;transition:width .3s}.gacha-btn{display:flex;align-items:center;justify-content:space-between;width:100%;border:0;border-radius:17px;padding:18px 19px;margin-top:13px;color:white;background:linear-gradient(135deg,#779f82,#527b65);font-weight:800;box-shadow:0 8px 18px #628d7030}.gacha-btn.ten{background:linear-gradient(135deg,#b3a3cc,#8777b1);box-shadow:0 8px 18px #9a8bbb2a}.gacha-btn:hover{filter:brightness(1.05);transform:translateY(-1px)}.gacha-btn small{font-size:12px;opacity:.92}.text-link{border:0;background:none;color:#658c70;font-size:13px;text-decoration:underline;text-underline-offset:3px;margin-top:18px}.info-strip{margin-top:17px;padding:14px 17px;border-radius:15px;background:#edf3e9;color:#75907a;font-size:12px;line-height:1.9}.modal-shade{position:fixed;inset:0;background:#263e36a8;backdrop-filter:blur(7px);z-index:50;display:flex;align-items:center;justify-content:center;padding:18px}.modal{width:min(510px,100%);max-height:min(92vh,880px);overflow:auto;background:#fffdf6;border-radius:28px;padding:28px;box-shadow:0 30px 90px #132b2755;position:relative;text-align:center}.modal.wide{width:min(850px,100%)}.modal h2{font-family:Georgia,'Noto Serif TC',serif;font-size:27px;margin:7px 0 13px}.modal p{color:#7d8d7e;font-size:14px;line-height:1.9}.modal-actions{display:flex;gap:10px;justify-content:center;margin-top:24px;flex-wrap:wrap}.primary,.secondary,.danger{border:0;border-radius:14px;padding:13px 22px;font-weight:800}.primary{background:#709879;color:white}.secondary{background:#e9efe6;color:#58735e}.danger{background:#a86969;color:white}.close{position:absolute;right:17px;top:13px;border:0;background:none;color:#849487;font-size:26px}.rate-table{width:100%;border-collapse:collapse;margin:15px 0;text-align:left}.rate-table td{padding:10px;border-bottom:1px solid #e7ebdf}.rarity{font-weight:900}.N{color:#879292}.R{color:#6298c4}.SR{color:#9b79c6}.SSR{color:#c79a37}.pet-visual{width:180px;height:180px;margin:0 auto;display:grid;place-items:center}.pet-visual svg{width:100%;height:100%}.result-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:11px;margin:20px 0}.result-card{position:relative;border-radius:17px;background:#f5f5ec;border:1px solid #e4e9dc;padding:9px 5px;min-width:0}.result-card.ssr{background:#fff7df;border-color:#ebd69e}.result-card.sr{background:#f3edf9}.result-card svg{width:100%;height:92px}.result-card .petname{font-size:12px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.result-card .extra{font-size:10px;color:#849188}.newtag{position:absolute;top:5px;left:5px;border-radius:8px;background:#e38d79;color:white;font-size:10px;padding:3px 5px;font-weight:900}.hatch-egg{font-size:150px;display:block;animation:eggshake .65s ease-in-out infinite;filter:drop-shadow(0 14px 15px #81958c55)}.hatch-spark{font-size:34px;letter-spacing:12px;color:#c7a8e5;animation:float 1s ease-in-out infinite alternate}.hatch-counter{font-size:13px;color:#8b9b8b;letter-spacing:2px}.celebrate{background:radial-gradient(circle at center,#fff5c9,#fffdf6 72%)}.celebrate:before{content:'✦ ✧ ✦ ✧ ✦';position:absolute;top:14px;left:0;right:0;color:#d5aa4d;letter-spacing:22px;animation:float 2s infinite alternate}.glow-ssr{filter:drop-shadow(0 0 22px #f1c76c)}.picker-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;max-height:55vh;overflow:auto}.pick-card{border:1px solid #e2e9dd;background:#f5f7f0;border-radius:16px;padding:8px;color:#607765}.pick-card svg{width:100%;height:92px}.pick-card span{display:block;font-size:12px;font-weight:800}.pick-card:hover{border-color:#83a78b}.volume-row{display:flex;align-items:center;gap:15px;margin:16px 0}.volume-row label{width:90px;text-align:left;font-size:13px}.volume-row input{flex:1;accent-color:#709879}.volume-row output{width:42px;font-size:13px}.intro{position:fixed;inset:0;z-index:90;background:radial-gradient(circle at 50% 36%,#dbead4,#8eaf96 80%);display:flex;align-items:center;justify-content:center;padding:20px}.book{width:min(620px,100%);min-height:620px;border:12px solid #f5eddc;border-radius:32px;box-shadow:0 24px 90px #335b4b77,inset 0 0 0 2px #c9d4b9;background:linear-gradient(145deg,#e9f0de,#c7dfc8);text-align:center;padding:48px 20px;position:relative;overflow:hidden}.book:before{content:'✦　✧　✦　✧　✦';display:block;font-size:27px;color:#a3b69a;letter-spacing:15px}.book h1{font-family:Georgia,'Noto Serif TC',serif;font-size:clamp(38px,7vw,60px);letter-spacing:9px;margin:28px 0 10px;color:#4f7357}.book .sub{font-size:14px;letter-spacing:6px;color:#829986}.intro-pets{display:flex;justify-content:center;align-items:center;gap:4px;margin:25px 0}.intro-pets svg{width:29%;max-height:185px;filter:drop-shadow(0 12px 8px #688f7140)}.start{background:#668e72;color:white;border:0;border-radius:30px;padding:17px 52px;font-weight:800;letter-spacing:4px;font-size:17px;box-shadow:0 9px 25px #4d78586a}.footnote{font-size:11px;color:#8ba18e;margin-top:24px}.toast{position:fixed;z-index:110;top:99px;left:50%;transform:translateX(-50%);background:#fffdf5;border:1px solid #d8e4d6;border-radius:15px;box-shadow:var(--shadow);padding:13px 22px;font-size:13px;font-weight:750;pointer-events:none;max-width:90vw;text-align:center;animation:fadein .2s}.unavailable{border:1px dashed #d8e2d2;border-radius:25px;padding:80px 30px;text-align:center;color:#829484;background:#f5f7f0}.unavailable h2{color:#55745c}.tutorial-counter{font-size:12px;color:#86a087;letter-spacing:3px}.tutorial-icon{font-size:70px;margin:20px 0}.tutorial-body{line-height:2!important}.small{font-size:12px!important}.highlight{color:#61836b;font-weight:800}@keyframes float{from{transform:translateY(0)}to{transform:translateY(-13px)}}@keyframes bounce{0%,100%{transform:translateY(0) rotate(0)}30%{transform:translateY(-22px) rotate(-6deg)}65%{transform:translateY(-7px) rotate(5deg)}}@keyframes eggshake{0%,100%{transform:rotate(-7deg) scale(1)}50%{transform:rotate(7deg) scale(1.08)}}@keyframes fadein{from{opacity:0;transform:translate(-50%,-10px)}to{opacity:1;transform:translate(-50%,0)}}@media(max-width:900px){.layout{grid-template-columns:1fr}.sidebar{position:fixed;bottom:0;left:0;right:0;z-index:19;flex-direction:row;justify-content:space-around;padding:7px;background:#fffdf7;border-top:1px solid #dfe7d9;gap:0}.nav{display:flex;flex-direction:column;gap:3px;padding:7px 8px;border-radius:12px;font-size:10px;min-width:0;text-align:center}.nav .ico{font-size:20px}.nav.active{box-shadow:inset 0 -3px #80a68a}.sidebar-note{display:none}.main{padding:24px 18px 100px}.topbar{height:69px;padding:0 16px}.brand{font-size:17px;letter-spacing:1px}.brand-emblem{width:34px;height:34px;font-size:19px}.currency{padding:8px 10px;font-size:12px}.iconbtn{width:36px;height:36px}.summon-wrap{grid-template-columns:1fr}.egg-stage{min-height:320px}.rowcards{grid-template-columns:1fr}.hero{height:420px}.showcase{width:210px}.tree.t3,.tree.t4{display:none}.scene-actions{right:12px;bottom:12px}.scene-actions .pill{padding:9px 11px;font-size:11px}.result-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.picker-grid{grid-template-columns:repeat(3,1fr)}}@media(max-width:480px){.hero{height:370px}.tree{transform:scale(.85)!important}.tree.t1{left:-85px}.tree.t2{right:-80px}.platform{width:230px}.showcase{width:180px}.speech{font-size:11px}.modal{padding:24px 17px}.brand{font-size:15px}.brand-emblem{display:none}.topright{gap:6px}.result-card svg{height:110px}.book{min-height:550px;padding-top:38px}}
+/* 桌面版依可視高度自動縮放，110% 瀏覽器縮放也盡量一屏顯示 */
+@media(min-width:901px){.app.fit-screen{min-height:0}.app.fit-screen .layout{min-height:0}.app.fit-screen .sidebar{min-height:0}.app.fit-screen .main{padding-bottom:24px}.app.fit-screen .hero{height:clamp(270px,37vw,470px)}.app.fit-screen .egg-stage{min-height:370px}}
+
+/* 第二階段：萌寵圖鑑 */
+.nav.has-new{position:relative}.nav.has-new:after{content:'';position:absolute;right:16px;top:12px;width:9px;height:9px;border-radius:50%;background:#e77f7d;box-shadow:0 0 0 3px #fff9}.dex-progress{display:flex;justify-content:space-between;align-items:center;background:linear-gradient(115deg,#fffdf5,#e5f0df);border:1px solid #dce9d7;border-radius:22px;padding:17px 25px;margin:8px 0 17px}.dex-progress>div{flex:1;max-width:570px}.dex-progress h2{font-size:21px;margin:5px 0 11px}.dex-progress h2 strong{color:#5e9771;font-size:30px}.dex-percent{font-size:14px;color:#89a18b;margin-left:10px}.dex-book{font-size:43px;margin-left:15px}.dex-toolbar{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;background:#fffdf8;border:1px solid #e7ebdf;padding:12px;border-radius:17px}.dex-select{display:flex;flex-direction:column;gap:5px;font-size:11px;font-weight:750;color:#849784}.dex-select select{width:100%;min-width:0;border:1px solid #dae7d8;border-radius:10px;padding:9px 8px;background:#f7faf3;color:#56705b;font:inherit;font-size:12px}.dex-count{font-size:12px;color:#829a84;margin:13px 3px 10px;display:flex;justify-content:space-between}.guardian{color:#b98c40;font-weight:800}.dex-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.dex-card{min-width:0;position:relative;display:flex;flex-direction:column;align-items:center;border:1px solid #e5ebdf;background:#fffef9;border-radius:19px;padding:12px 7px 11px;color:#506e56;transition:transform .18s,box-shadow .18s}.dex-card:hover{transform:translateY(-3px);box-shadow:0 8px 22px #5b79551c}.dex-card-visual{width:100%;height:clamp(86px,11vh,140px);display:grid;place-items:center}.dex-card-visual svg{width:100%;height:100%;max-width:165px}.dex-card.locked .dex-card-visual svg{filter:brightness(0) saturate(100%) invert(72%) sepia(8%) saturate(378%) hue-rotate(78deg) brightness(92%);opacity:.58}.dex-card.locked{background:#f3f5ee}.dex-card-name{font-size:14px;font-weight:800;margin:3px 0 7px;white-space:nowrap;max-width:100%;overflow:hidden;text-overflow:ellipsis}.dex-tags{display:flex;gap:7px;align-items:center;justify-content:center;font-size:11px;color:#829782}.dex-stars{font-size:12px;color:#d7aa4e;letter-spacing:1px;margin-top:8px}.dex-unknown{font-size:11px;color:#9ba89a;margin-top:8px}.dex-new{position:absolute;top:9px;left:8px;background:#e88178;color:white;font-size:10px;padding:4px 7px;border-radius:8px;font-weight:800;z-index:2}.dex-empty{text-align:center;padding:36px;color:#879889}.dex-detail .detail-visual{height:220px;display:grid;place-items:center;position:relative;margin:5px auto 12px;cursor:pointer}.detail-visual svg{width:215px;height:205px;filter:drop-shadow(0 12px 15px #829f8a30)}.detail-visual.mystery{cursor:default}.detail-visual.mystery svg{filter:brightness(0) saturate(100%) invert(70%) sepia(10%) saturate(375%) hue-rotate(75deg);opacity:.7}.detail-visual.wiggle svg{animation:bounce .55s ease}.detail-hint{position:absolute;bottom:-7px;font-size:11px;color:#8da18f}.dex-detail h2{margin:9px 0 6px}.detail-stars{color:#d5ad5b;font-size:24px;letter-spacing:5px}.detail-personality{margin:8px 0!important}.detail-story{margin:12px auto;padding:16px 20px;border-radius:16px;background:#f2f6ec;color:#647a67;line-height:1.95;max-width:590px;text-align:left;font-size:14px}.detail-data{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:12px auto;max-width:590px}.detail-data span{background:#fff8ed;border-radius:12px;padding:10px 5px;color:#839284;font-size:12px;line-height:1.8}.detail-data b{color:#52745d}.detail-evolution{color:#879d89;font-size:12px;margin:10px}.detail-forms{display:flex;gap:12px;justify-content:center;margin:12px 0}.detail-form{width:132px;border:2px solid #e2e9df;border-radius:15px;padding:6px;display:flex;flex-direction:column;align-items:center;font-size:12px;color:#65816c}.detail-form.selected{border-color:#9ebd9f;background:#f0f7ed}.detail-form svg{width:80px;height:80px}.detail-form.form-locked svg{filter:brightness(0) saturate(100%) invert(73%);opacity:.5}.detail-unknown{padding:15px;background:#f0f3ed;border-radius:15px;font-size:12px;color:#8b9b8c}.detail-nav{display:flex;justify-content:space-between;gap:8px;margin-top:16px}.detail-nav button{padding:11px 14px;font-size:12px}.evolve-badge{display:flex;align-items:center;justify-content:center;gap:9px;background:#fff5df;border:1px solid #dcb96e;border-radius:15px;padding:9px;color:#bd8c35;font-size:13px;margin:10px auto;max-width:330px}.evolve-badge.n{background:#f3f5f4;color:#84918d;border-color:#b7c2bf}.evolve-badge.r{background:#edf4fc;color:#6d9dc9;border-color:#a9c5e3}.evolve-badge.sr{background:#f4eefb;color:#a58bc4;border-color:#c6b2e0}.evolve-badge small{font-size:10px}.evolve-badge b{letter-spacing:2px}@media(max-width:1000px){.dex-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}@media(max-width:700px){.dex-toolbar{grid-template-columns:repeat(2,minmax(0,1fr))}.dex-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.dex-progress{padding:13px 16px}.dex-progress h2{font-size:17px}.dex-book{font-size:30px}.detail-data{grid-template-columns:repeat(3,1fr)}.dex-detail .detail-visual{height:190px}.detail-visual svg{height:180px;width:190px}}@media(min-width:1001px){.dex-card-visual{height:clamp(90px,13vh,145px)}}
+
+/* 110% desktop: fit the entire current page inside the browser viewport. */
+@media(min-width:901px){
+  html,body{min-height:100%;overflow:hidden}
+  .app{height:100dvh;min-height:0;overflow:hidden;max-width:none}
+  .app .layout{height:calc(100dvh - 68px);min-height:0}
+  .app .topbar{height:68px}
+  .app .sidebar{padding-top:16px;padding-bottom:14px;gap:4px}
+  .app .sidebar .nav{padding:11px 16px}
+  .app .main{padding-top:17px;padding-bottom:12px;overflow:hidden}
+  .app .page-title{margin:3px 0;font-size:clamp(25px,2.6vw,34px)}
+  .app .subtitle{margin-bottom:12px;line-height:1.5}
+  .app .hero{height:clamp(230px,47vh,480px)}
+  .app .rowcards{margin-top:12px;gap:12px}
+  .app .mini-card{padding:12px 16px}
+  .app .mini-card h3{margin:4px 0}
+  .app .egg-stage{min-height:clamp(260px,60vh,490px)}
+  .app .summon-panel{padding:19px}
+  .app .summon-panel .pity{margin-top:12px}
+  .app .summon-panel .gacha-btn{padding:12px 16px;margin-top:9px}
+  .app .dex-progress{padding:10px 17px;margin:4px 0 9px}
+  .app .dex-progress h2{margin:3px 0 7px}
+  .app .dex-toolbar{padding:8px}
+  .app .dex-count{margin:7px 3px}
+  .app .dex-grid{gap:8px}
+  .app .dex-card{padding:7px 5px}
+  .app .dex-card-visual{height:clamp(70px,10vh,125px)}
+  .app .dex-card-name{margin:1px 0 3px}
+  .app .dex-stars,.app .dex-unknown{margin-top:3px}
+}
+/* Pet details must fit without an internal scrollbar. */
+.modal.detail-full-view{overflow:hidden!important}
+.modal.detail-full-view .dex-detail .detail-visual{height:clamp(115px,20vh,190px);margin:0 auto 4px}
+.modal.detail-full-view .detail-visual svg{height:100%;max-height:185px}
+.modal.detail-full-view .dex-detail h2{margin:4px 0}
+.modal.detail-full-view .detail-story{padding:10px 15px;margin:7px auto;line-height:1.55}
+.modal.detail-full-view .detail-data{margin:7px auto}
+.modal.detail-full-view .detail-data span{padding:6px 4px;line-height:1.4}
+.modal.detail-full-view .detail-forms{margin:6px 0}
+.modal.detail-full-view .detail-form{padding:3px;width:110px}
+.modal.detail-full-view .detail-form svg{width:60px;height:60px}
+.modal.detail-full-view .detail-nav{margin-top:7px}
+.modal.detail-full-view .detail-nav button{padding:8px 11px}
+.modal.detail-full-view .modal-actions{margin-top:8px}
+.modal.detail-full-view .detail-personality{margin:4px 0!important}
+.modal.detail-full-view .detail-stars{font-size:20px}
+@media(max-width:900px){.modal.detail-full-view{padding:14px}.modal.detail-full-view .detail-story{font-size:12px}}
+
+
+/* 第二階段修正：圖鑑列表保留捲動，其他頁維持滿版。 */
+@media (min-width:901px){
+  .app .main:has(.dex-grid),.app .main:has(.dex-empty){overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;scrollbar-gutter:stable;}
+  .app .main:has(.dex-grid) .dex-grid{padding-bottom:22px;}
+}
+/* 萌寵詳細資料：左側大圖、右側介紹，底部固定導覽。 */
+.modal.detail-full-view{width:min(1020px,calc(100vw - 32px));padding:20px 24px;}
+.modal.detail-full-view .dex-detail{text-align:left;}
+.modal.detail-full-view .dex-detail>.eyebrow{text-align:center;margin-bottom:9px;}
+.modal.detail-full-view .detail-columns{display:grid;grid-template-columns:minmax(205px,39%) minmax(0,1fr);gap:24px;align-items:center;}
+.modal.detail-full-view .detail-left{display:flex;align-items:center;justify-content:center;min-width:0;}
+.modal.detail-full-view .dex-detail .detail-visual{height:clamp(230px,45vh,420px);width:100%;margin:0;}
+.modal.detail-full-view .detail-visual svg{width:100%;height:100%;max-height:100%;}
+.modal.detail-full-view .detail-right{min-width:0;}
+.modal.detail-full-view .detail-right h2{font-size:clamp(20px,2.2vw,29px);}
+.modal.detail-full-view .detail-story{max-width:none;font-size:13px;line-height:1.55;margin:7px 0;}
+.modal.detail-full-view .detail-data{max-width:none;margin:7px 0;}
+.modal.detail-full-view .detail-forms{justify-content:flex-start;}
+.modal.detail-full-view .detail-nav{justify-content:center;margin-top:12px;}
+.modal.detail-full-view .detail-nav button{min-width:105px;}
+@media(max-width:700px){
+  .modal.detail-full-view{padding:12px;width:calc(100vw - 20px);}
+  .modal.detail-full-view .detail-columns{grid-template-columns:minmax(105px,35%) minmax(0,1fr);gap:9px;align-items:start;}
+  .modal.detail-full-view .dex-detail .detail-visual{height:clamp(145px,30vh,250px);}
+  .modal.detail-full-view .detail-story{font-size:11px;padding:7px;line-height:1.4;}
+  .modal.detail-full-view .detail-data{gap:3px;}
+  .modal.detail-full-view .detail-data span{font-size:10px;}
+  .modal.detail-full-view .detail-forms{gap:5px;}
+  .modal.detail-full-view .detail-form{width:75px;font-size:10px;}
+  .modal.detail-full-view .detail-form svg{width:43px;height:43px;}
+  .modal.detail-full-view .detail-nav button{min-width:0;padding:8px;font-size:11px;}
+}
+
+/* 圖鑑詳情：柔和鼠尾草綠襯底，讓白色／淺色萌寵清楚可見 */
+.modal.detail-full-view .detail-left{
+  background:radial-gradient(ellipse at 50% 39%,#dbe9d5 0%,#bfd4b9 62%,#a9c4a5 100%);
+  border:1px solid #a6c09f;
+  border-radius:25px;
+  padding:14px;
+  box-shadow:inset 0 2px 16px #6e96721c;
+}
+.modal.detail-full-view .detail-visual svg{
+  filter:drop-shadow(0 9px 11px #4c745a55);
+}
+.modal.detail-full-view .detail-visual.mystery svg{
+  filter:brightness(0) saturate(100%) invert(70%) sepia(10%) saturate(375%) hue-rotate(75deg);
+}
+@media(max-width:700px){.modal.detail-full-view .detail-left{padding:6px;border-radius:15px}}
+
+/* 圖鑑配色統一：整張萌寵詳情與圖鑑預覽皆使用米白色，非局部色塊。 */
+.modal.detail-full-view{
+  background:#f5ecd9;
+  border:1px solid #e0d0b5;
+}
+.modal.detail-full-view .detail-left{
+  background:transparent;
+  border:0;
+  border-radius:0;
+  box-shadow:none;
+}
+.modal.detail-full-view .detail-story,
+.modal.detail-full-view .detail-data span,
+.modal.detail-full-view .detail-form,
+.modal.detail-full-view .detail-unknown{
+  background:#eee2ca;
+  border-color:#d9c8ab;
+}
+.modal.detail-full-view .detail-form.selected{
+  background:#e7d9bc;
+  border-color:#b6a17c;
+}
+.dex-card,.dex-card.locked{
+  background:#f5ecd9;
+  border-color:#e2d4bd;
+}
+.dex-card:hover{background:#f1e5cf}
+.dex-card-visual{background:transparent}
+
+
+/* 2026-10-15：更淺的鼠尾草奶白；整張詳情與圖鑑卡片一致。 */
+.modal.detail-full-view{background:#f3f6ed;border-color:#dbe6d7}
+.modal.detail-full-view .detail-story,
+.modal.detail-full-view .detail-data span,
+.modal.detail-full-view .detail-form,
+.modal.detail-full-view .detail-unknown{background:#e8efe3;border-color:#d2dfce}
+.modal.detail-full-view .detail-form.selected{background:#dfeadd;border-color:#a3bca0}
+.dex-card,.dex-card.locked{background:#f3f6ed;border-color:#dbe6d7}
+.dex-card:hover{background:#eaf1e5}
+/* SVG 視框已擴大，避免翅膀、尾巴、耳尖超出視框遭裁切。 */
+.detail-visual svg,.dex-card-visual svg,.detail-form svg,.showcase svg{overflow:visible}
+/* 主城下方三張資訊卡：標題與圖示同列，壓縮高度，110% 更容易完整顯示。 */
+@media(min-width:901px){
+ .rowcards{gap:10px;margin-top:11px}
+ .mini-card{padding:12px 13px;border-radius:16px;display:grid;grid-template-columns:26px minmax(0,1fr);column-gap:8px;align-content:start;align-items:center}
+ .mini-card .emoji{font-size:21px;grid-column:1;grid-row:1}
+ .mini-card h3{font-size:14px;margin:0;grid-column:2;grid-row:1;white-space:nowrap}
+ .mini-card p{grid-column:1/-1;font-size:11px;line-height:1.4;margin-top:5px}
+ .app.fit-screen .hero{height:clamp(230px,32vw,405px)}
+ .app.fit-screen .main{padding-bottom:10px}
+}
+
+/* 維持原版插畫，圖鑑預覽卡與資訊各佔獨立區塊 */
+.dex-card{display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:flex-start!important;overflow:hidden!important;min-height:212px!important;background:#f3f5eb!important}
+.dex-card-visual{position:relative!important;display:flex!important;align-items:center!important;justify-content:center!important;width:100%!important;height:130px!important;min-height:130px!important;flex:0 0 130px!important;overflow:hidden!important}
+.dex-card-visual svg{position:static!important;display:block!important;width:145px!important;height:130px!important;max-width:100%!important;overflow:visible!important;flex:none!important}
+.dex-card-name,.dex-tags,.dex-stars,.dex-unknown{position:relative!important;z-index:2!important;flex:none!important}
+.dex-card-name{margin-top:7px!important}
+.modal.detail-full-view{background:#f3f5eb!important}
+.modal.detail-full-view .detail-left{background:#f3f5eb!important}
+@media(min-width:901px){.app .main:has(.dex-grid){overflow-y:auto!important;overflow-x:hidden!important;min-height:0!important}}
+
+/* 純手繪 SVG，禁止拉伸與文字覆蓋 */
+.dex-card{min-height:225px!important;overflow:hidden!important}
+.dex-card-visual{height:140px!important;min-height:140px!important;flex:0 0 140px!important;display:flex!important;align-items:center!important;justify-content:center!important;overflow:hidden!important}
+.dex-card-visual svg{width:135px!important;height:140px!important;max-width:100%!important;flex:none!important;display:block!important}
+.dex-card-name,.dex-tags,.dex-stars,.dex-unknown{position:relative!important;z-index:2!important;flex-shrink:0!important}
+.dex-card-name{margin-top:6px!important}
+.main:has(.dex-grid){overflow-y:auto!important;overflow-x:hidden!important;min-height:0!important}
+
+/* 第三階段 · 萌寵養成室 */
+.raise-layout{display:grid;grid-template-columns:minmax(300px,1.04fr) minmax(320px,1fr);gap:18px;align-items:start}
+.raise-list,.raise-stage{background:#f1f5eb;border:1px solid #dbe5d5;border-radius:23px;padding:17px}
+.raise-list-head{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.raise-list-head strong{font-size:16px}.raise-list-head strong span{color:#8aa28b;font-size:12px}
+.raise-check{font-size:12px;color:#647e68;display:flex;align-items:center;gap:5px;cursor:pointer}.raise-check input{accent-color:#759a79}
+.raise-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;max-height:min(65vh,630px);overflow:auto;padding:2px 3px 5px}
+.raise-card{border:1px solid #dbe5d7;background:#f9faf3;border-radius:15px;position:relative;padding:8px 4px;display:flex;flex-direction:column;align-items:center;gap:3px;min-width:0;color:#536e59}
+.raise-card.selected{border:2px solid #83a989;background:#e6efe2}.raise-card b{font-size:12px;white-space:nowrap;max-width:100%;overflow:hidden;text-overflow:ellipsis}
+.raise-card small{font-size:11px}.raise-card-stars{color:#d7a84f;font-size:12px;white-space:nowrap}
+.raise-thumb{height:83px;display:grid;place-items:center;width:100%;overflow:hidden}.raise-thumb svg{width:85px;height:82px;display:block}
+.raise-new,.raise-ready{position:absolute;top:3px;font-size:9px;font-weight:800;border-radius:10px;padding:3px 5px;z-index:2}
+.raise-new{left:3px;background:#f8e2c9;color:#a76d38}.raise-ready{right:3px;background:#e7d7a2;color:#765c22}
+.raise-no-ready{grid-column:1/-1;text-align:center;line-height:2;color:#7b8d7d;padding:36px 10px}
+.raise-stage{text-align:center;background:#f3f6ed}.raise-stage-top{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.raise-link{border:0;background:#e4ecdf;color:#547a5e;border-radius:12px;padding:8px 10px;font-size:12px;font-weight:750}
+.raise-stage h2{margin:6px 0 0;font-size:23px;color:#47664e}
+.raise-main-art{height:clamp(155px,26vh,235px);display:grid;place-items:center;overflow:hidden}.raise-main-art svg{height:100%;max-width:100%;width:auto}
+.raise-stars{color:#d8ac57;font-size:25px;letter-spacing:4px;margin:4px 0 8px}
+.raise-next{font-size:13px;color:#718874}.raise-progress{background:#dce7d9;border-radius:20px;height:12px;overflow:hidden;margin:9px 5px 4px}.raise-progress>div{height:100%;background:linear-gradient(90deg,#a2c3a0,#659879);border-radius:20px}
+.raise-count{font-size:12px;color:#6f9275}.raise-fragments{display:flex;gap:8px;margin:12px 0;justify-content:center}.raise-fragments span{flex:1;border-radius:12px;padding:10px 4px;background:#e7efe3;font-size:11px;color:#718a73}.raise-fragments b{font-size:15px;display:block;color:#4c7657}
+.raise-upgrade{width:100%;background:#e5ece1;color:#5d8064;border:1px solid #cfdccc;border-radius:14px;padding:13px;font-weight:800}.raise-upgrade.ready{background:#6d9877;color:white}
+.raise-max-badge{display:flex;flex-direction:column;align-items:center;gap:4px}.raise-max-badge .evolve-badge{margin:2px auto}.raise-max-badge strong{font-size:12px;color:#b58e47}
+.raise-form-title{font-size:12px;font-weight:700;color:#6b886f;margin:9px 0}.raise-form-grid{display:flex;justify-content:center;gap:12px}
+.raise-form{background:#f7f9f2;border:2px solid #d5e2d0;border-radius:15px;padding:5px 15px;color:#627b67;display:flex;flex-direction:column;align-items:center;gap:2px;font-size:12px}
+.raise-form.chosen{border-color:#7ca384;background:#e1eddf}.raise-form svg{height:66px;width:68px}
+.raise-empty{padding:60px 18px;text-align:center;background:#f1f5eb;border-radius:25px;color:#6b826e}.raise-empty p{margin-bottom:20px}
+.raise-confirm-art svg{height:125px;width:125px}.raise-confirm-stars{font-size:22px!important;color:#d5a54e!important}
+.raise-success-art svg{height:185px;width:185px}.raise-magic{color:#d4a750;font-size:29px;letter-spacing:9px;animation:float 1.2s ease-in-out infinite alternate}
+.raise-evolution .raise-success-art{filter:drop-shadow(0 0 19px #e0bb75)}
+@media(max-width:950px){.raise-layout{grid-template-columns:1fr}.raise-grid{grid-template-columns:repeat(3,minmax(0,1fr));max-height:340px}.raise-main-art{height:220px}}
+@media(max-width:500px){.raise-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.raise-list,.raise-stage{padding:11px}.raise-fragments{gap:4px}}
+
+/* 第四階段：每日任務、成就與通知 */
+.task-tabs{display:flex;gap:12px;border-bottom:1px solid #d9e5d7;margin:0 0 18px}.task-tabs button{position:relative;border:0;border-bottom:3px solid transparent;background:transparent;padding:13px 20px;color:#809783;font-weight:800}.task-tabs button.active{color:#50795d;border-bottom-color:#7ca489}.task-red-dot{display:inline-block;background:#d96967;border-radius:50%;width:8px;height:8px;margin-left:3px;vertical-align:top}
+.nav.has-new:after{content:'';background:#dc6a68;border-radius:50%;width:8px;height:8px;margin-left:auto}
+.task-overview{background:#eff4e9;border:1px solid #dce6d5;border-radius:18px;padding:17px;margin-bottom:11px}.task-overview-top{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;font-size:14px}.task-overview-top span{font-size:11px;color:#899b87}.task-progress,.ach-progress{background:#dce8da;border-radius:18px;overflow:hidden;height:12px;margin-top:11px}.task-progress>div,.ach-progress>div{height:100%;border-radius:18px;transition:width .3s}
+.task-all{display:block;width:100%;border:0;background:#719c7c;color:white;border-radius:14px;padding:12px;font-weight:800;margin:0 0 12px}.task-all:disabled{background:#e4e8e2;color:#96a297;opacity:1}
+.task-list{display:flex;flex-direction:column;gap:11px;max-height:calc(100vh - 365px);min-height:220px;overflow-y:auto;padding:3px 4px 14px}.task-card{background:#f6f8f1;border:1px solid #dce7d8;border-radius:19px;padding:15px;display:flex;align-items:center;gap:14px;position:relative}.task-card.claimable{border-color:#9fbda3;box-shadow:0 0 13px #9fcba446;background:#f1f8ec}.task-card.claimed{opacity:.72}.task-icon{font-size:30px;flex:none}.task-content{flex:1;min-width:0}.task-content strong{color:#536f58;font-size:15px}.task-content p{font-size:12px;color:#8b9d8c;margin:5px 0}.task-prize{font-size:12px;color:#b18a49;font-weight:800;line-height:1.7}.task-claim{border:0;background:#729d7c;color:white;border-radius:12px;padding:11px 15px;font-size:12px;font-weight:800;flex:none}.task-claim:disabled{background:#e2e8df;color:#87988a;opacity:1}.task-check{position:absolute;right:12px;top:4px;color:#6c9c77;font-size:15px}.ach-card .ach-progress{height:8px;margin:8px 0 3px}.ach-card small{font-size:11px;color:#819582}.task-notice{position:fixed;z-index:125;top:95px;left:50%;transform:translateX(-50%);background:#edf6e9;border:1px solid #a3c5a7;border-radius:18px;padding:13px 22px;box-shadow:0 12px 28px #405f4530;color:#537c5c;font-weight:800;font-size:13px;white-space:nowrap;max-width:94vw;overflow:hidden;text-overflow:ellipsis;pointer-events:none}.task-notice.achievement{background:#fff4d9;border-color:#d8b86f;color:#9b793d}.task-reward-effect{font-size:35px;color:#b7a35f;letter-spacing:15px}.task-reward-summary{background:#eff4e8;border-radius:17px;padding:18px;line-height:2.2;font-weight:800;color:#557e60}
+@media(max-width:600px){.task-list{max-height:none}.task-card{gap:7px;padding:11px}.task-icon{font-size:24px}.task-claim{padding:9px;font-size:11px}.task-tabs button{padding:12px}}
+
+/* 第四階段修正：萌寵提示文字固定在插畫下方，不再覆蓋 SVG */
+.modal.detail-full-view .dex-detail .detail-visual,
+.dex-detail .detail-visual{
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:8px!important;
+  overflow:visible!important;
+}
+.modal.detail-full-view .detail-visual svg,
+.dex-detail .detail-visual svg{
+  display:block!important;
+  flex:1 1 auto!important;
+  min-height:0!important;
+  width:100%!important;
+  height:calc(100% - 26px)!important;
+  max-height:calc(100% - 26px)!important;
+  object-fit:contain!important;
+}
+.modal.detail-full-view .detail-hint,
+.dex-detail .detail-hint{
+  position:static!important;
+  display:block!important;
+  flex:0 0 18px!important;
+  line-height:18px!important;
+  width:100%!important;
+  text-align:center!important;
+  color:#7d9681!important;
+  font-size:11px!important;
+  white-space:nowrap!important;
+  pointer-events:none!important;
+}
+
+/* 第五階段：森林商店（響應式滿版） */
+.shop-scene{max-width:850px;margin:14px auto 12px;background:linear-gradient(155deg,#f4f7ed,#e7f0e3 55%,#f8f4e7);border:1px solid #d7e5d4;border-radius:27px;text-align:center;padding:clamp(15px,3vh,28px) 22px;position:relative;overflow:hidden;box-shadow:0 12px 35px #72967813}
+.shop-sparkles{color:#a4bb8e;letter-spacing:18px;font-size:21px}.shop-mushrooms{position:absolute;top:28%;left:7%;font-size:34px;opacity:.7}.shop-mushrooms span{display:block;margin:10px 0}.shop-gift-art{width:clamp(115px,20vh,175px);height:clamp(115px,20vh,175px);margin:4px auto 7px;border-radius:50%;display:flex;justify-content:center;align-items:center;gap:7px;background:radial-gradient(circle,#fffdf0 22%,#d9eacb 70%,#c1dcbf);border:7px solid #e9f2e4;color:#83acb2;font-size:clamp(55px,10vh,90px);box-shadow:0 6px 22px #83a58e35}.shop-gift-art span{color:#e2bc6c;font-size:20px}.shop-title{font-size:clamp(19px,2.5vw,26px);font-weight:850;color:#53785c}.shop-scene p{font-size:13px;color:#839b82;margin:9px 0}.shop-amount{background:#fffdf6;border:1px solid #e5e9d8;border-radius:15px;padding:12px;margin:13px auto;max-width:330px;color:#678b70;font-size:16px}.shop-amount span{color:#76b4b5}.shop-amount strong{color:#4f805e;font-size:24px}.shop-claim{background:#699875;border:0;border-radius:30px;color:white;font-weight:800;font-size:15px;padding:14px 29px;box-shadow:0 7px 17px #5c8d6d37}.shop-claim.claimed{background:#e1e9de;color:#7e9782;box-shadow:none;cursor:default}.shop-reset{color:#8b9c87;font-size:11px;line-height:1.8;margin-top:11px}.shop-tip{max-width:850px;margin:0 auto;display:flex;align-items:center;gap:15px;padding:13px 20px;background:#f6f7f0;border:1px solid #e2e9dc;border-radius:19px}.shop-tip>div{font-size:30px;color:#d3ae64}.shop-tip p{flex:1;color:#6d866f;font-size:12px;line-height:1.8;margin:0}.shop-tip .secondary{white-space:nowrap;padding:11px}.shop-reward-sparkles{color:#d2a95a;font-size:29px;letter-spacing:13px;animation:float 1s ease-in-out infinite alternate}.shop-reward-gem{font-size:64px;color:#78b4bb;filter:drop-shadow(0 0 11px #dfc277)}.source-back{border:0;border-radius:14px;background:#e7efe4;color:#5b8066;padding:9px 15px;margin-bottom:9px;font-weight:800}
+@media(max-width:650px){.shop-tip{flex-wrap:wrap;gap:8px}.shop-tip p{flex-basis:75%}.shop-tip .secondary{margin-left:auto}.shop-mushrooms{left:2%;font-size:22px}.shop-scene{padding:18px 13px}}
+
+/* 第五階段商店：在 110% 縮放及較矮螢幕中，允許商店內容獨立捲動，避免下方提示/按鈕被截斷。 */
+@media (min-width:901px){
+  .app .main:has(.shop-scene){
+    overflow-y:auto!important;
+    overflow-x:hidden!important;
+    min-height:0!important;
+    overscroll-behavior:contain;
+    scrollbar-gutter:stable;
+    padding-bottom:38px!important;
+  }
+  .app .main:has(.shop-scene) .shop-scene{margin-top:8px;margin-bottom:10px;padding:12px 18px;}
+  .app .main:has(.shop-scene) .shop-gift-art{width:clamp(100px,17vh,145px);height:clamp(100px,17vh,145px);font-size:clamp(48px,8vh,75px);margin:2px auto 5px;}
+  .app .main:has(.shop-scene) .shop-tip{margin-bottom:12px;}
+}
+@media (max-width:900px){
+  .main:has(.shop-scene){overflow-y:auto!important;overflow-x:hidden!important;padding-bottom:48px!important;}
+  .shop-tip{margin-bottom:18px;}
+}
+</style>
+</head>
+<body>
+<div id="intro" class="intro hidden"><div class="book"><div class="eyebrow">THE ENCHANTED FOREST</div><h1>森之幻寵</h1><div class="sub">每一次相遇，都是魔法</div><div class="intro-pets" id="introPets"></div><p style="color:#718e79;line-height:2">穿越微光森林，喚醒沉睡的魔法蛋。<br>和專屬於你的奇幻萌寵，展開溫柔的冒險。</p><button class="start" id="startBtn">✧ 開始遊戲 ✧</button><div class="footnote">離線也能遊玩 · 進度儲存於此瀏覽器</div></div></div>
+<div class="app"><header class="topbar"><div class="brand"><span class="brand-emblem">🌿</span><span>森之幻寵</span></div><div class="topright"><button id="currency" class="currency" title="召喚石取得方式"><span class="gem">◆</span><span id="stones">3,000</span><span style="font-size:11px;font-weight:500">召喚石</span></button><button id="settingsBtn" class="iconbtn" title="設定">⚙</button></div></header><div class="layout"><aside class="sidebar" id="sidebar"><button class="nav active" data-page="home"><span class="ico">⌂</span>主城</button><button class="nav" data-page="summon"><span class="ico">✧</span>召喚</button><button class="nav" data-page="dex"><span class="ico">▦</span>圖鑑</button><button class="nav" data-page="raise"><span class="ico">✿</span>養成</button><button class="nav" data-page="tasks"><span class="ico">☑</span>任務</button><button class="nav" data-page="shop"><span class="ico">♧</span>商店</button></aside><main class="main" id="main"></main></div></div>
+<div id="modalRoot"></div><div id="toastRoot"></div>
+<script>
+(()=>{'use strict';
+const KEY='forest-familiars-v1';
+const species=[
+['燭尾狐','火','N','fox','#eeb38f','#f9dcc2','活潑','尾尖燃著小小燭火的狐狸，最喜歡在晨霧裡追逐閃光的種子。牠總把暖暖的尾巴借給怕冷的朋友，遇見陌生人時也會勇敢地先伸出爪子。'],
+['暖絨團','火','N','puff','#e6a990','#f5d9b5','撒嬌','像烤棉花糖一樣柔軟的小精靈，生氣時耳朵會冒出溫柔的火星。牠擅長讓沉默的森林重新熱鬧起來，也會偷偷替迷路的小動物照亮回家的路。'],
+['熔岩小龍','火','R','dragon','#df997c','#f5c8a4','勇敢','住在溫泉岩洞的小龍，翅膀還不夠大，卻總想飛到最高的樹梢。牠收藏漂亮的火山石，認為每一顆石頭都記錄著森林曾經發生的故事。'],
+['焰冠獅靈','火','SR','lion','#dba078','#f5d0a2','可靠','額前有一圈火焰花冠的獅靈，腳步輕得像落葉，卻能守護整座山谷。牠不喜歡爭吵，總用溫暖的鬃毛安撫受驚的朋友。'],
+['泡泡水靈','水','N','blob','#99cbd9','#d6f0ee','好奇','從清晨的第一顆露珠誕生的水靈，身旁總漂浮著圓圓的泡泡。牠喜歡聽雨滴敲打葉片的聲音，偶爾還會把彩虹藏在透明的小口袋裡。'],
+['貝殼兔','水','N','bunny','#a6c9df','#e2eff4','害羞','長耳朵像柔軟貝殼的兔子，喜歡在月光下撿拾海浪帶來的玻璃珠。牠說話很小聲，卻會在朋友難過時送上一顆最漂亮的珍珠。'],
+['漣漪海鹿','水','R','deer','#8dc1c8','#d4eee9','優雅','腳步踏過的地方會留下淡淡水紋的小鹿，鹿角像珊瑚般輕盈。牠喜歡帶著迷路的魚群尋找溪流，也會替枯萎的花朵送來一場細雨。'],
+['月潮鯨靈','水','SR','whale','#83b4d5','#d7e5f5','溫柔','漂浮在林間水霧裡的小鯨靈，唱歌時會出現銀色的浪花。牠相信每個願望都值得被傾聽，因此常在夜裡收集小動物們悄悄說出的心事。'],
+['雲絨獸','風','N','puff','#c6d8b1','#f2efd4','慢熟','像一小朵雲的絨毛獸，走路時幾乎不會碰到地面。牠喜歡在微風裡打盹，醒來後會把收集的蒲公英種子送給最先遇見的朋友。'],
+['葉耳狐','風','N','fox','#a9c6a4','#e5edc5','機靈','耳朵像嫩葉的狐狸，能聽見樹木低聲交談。牠常替森林傳遞消息，遇到下雨也不急著躲藏，因為牠認為雨聲就是天空寫來的信。'],
+['幸運四葉靈','風','R','squirrel','#b3cba6','#f0e5c4','淘氣','由四葉幸運草誕生的小小森林精靈，頭頂長著翠綠葉片，走到哪裡都會留下幸運的微光。牠喜歡把找到的四葉草送給朋友，為每一天帶來一點驚喜。'],
+['嵐歌飛鳥','風','SR','bird','#a5c9b7','#e5f1d9','自由','羽翼會映出淡青色光芒的飛鳥，歌聲能讓風停下來傾聽。牠每年都會飛越遠方山嶺，把見過的天空顏色編成歌，唱給森林裡的孩子聽。'],
+['閃耳鼠','雷','N','mouse','#e5cf91','#f8ebc6','急性子','小耳朵總冒出微弱電光的圓鼠，跑起來像一顆滾動的星星。牠雖然做事匆忙，卻從不忘記替朋友加油，是森林裡最熱情的小小啦啦隊。'],
+['電光球球','雷','N','puff','#e7d49a','#fff2c9','開朗','毛髮蓬鬆得像蒲公英的球球，打噴嚏時會蹦出金色火花。牠最愛和螢火蟲比誰比較亮，輸了也會笑著請大家一起吃甜甜的果實。'],
+['雷角羊','雷','R','sheep','#d5c49a','#f2e8c7','固執','羊角像彎彎閃電的魔法羊，總堅持走自己的路。牠最擅長在暴風雨來臨前找到安全的洞穴，並把所有小動物一個個領進溫暖的避風處。'],
+['星電貂','雷','SR','ferret','#d8bf8c','#f7e6b7','敏捷','身上有星形電紋的小貂，奔跑時會留下一道細細金光。牠喜歡收集發亮的礦石，總說每一顆石頭裡都藏著還沒被發現的閃電。'],
+['曦羽雀','光','R','bird','#f2dbab','#fff6dc','樂觀','羽毛像清晨陽光一樣柔軟的小雀，停在哪裡就能讓花朵微微抬頭。牠相信每個夜晚都會迎來黎明，因此總在天亮前唱出第一首歌。'],
+['星輝鹿','光','SR','deer','#ead8b6','#fff7e2','沉穩','鹿角上棲著細小星光的白鹿，總在森林最安靜的時候出現。牠會為徬徨的旅人照亮腳邊的路，卻從不替任何人決定要走向何方。'],
+['晨曦聖靈','光','SSR','griffin','#f3d9b0','#fff9e7','慈愛','傳說中從第一縷晨光誕生的聖靈，羽翼灑落的微光能喚醒沉睡的花海。牠只在真誠的願望面前現身，守護著森林裡所有尚未說出口的希望。'],
+['影芽蝠','暗','R','bat','#b4a8c9','#e6dced','內向','住在月影花叢的小蝙蝠，翅膀邊緣像柔軟的花瓣。牠害怕吵鬧，卻喜歡在深夜替晚歸的朋友點亮一盞紫色的小燈。'],
+['暮霧貓靈','暗','SR','cat','#a69abf','#e0d7e8','神秘','腳掌踏過時會留下紫色霧花的貓靈，眼睛像兩顆安靜的星星。牠喜歡守護被遺忘的故事，也會在有人孤單時默默陪伴，不說一句話。'],
+['永夜幻獸','暗','SSR','wolf','#a69aba','#ded5f0','高傲','傳說棲息於星空背面的幻獸，尾巴拖曳著細碎銀河。牠看似冷漠，卻會為最微弱的求救聲穿越長夜，替迷途的靈魂守住最後一點光。']
+].map((s,id)=>({id,name:s[0],element:s[1],rarity:s[2],shape:s[3],base:s[4],light:s[5],personality:s[6],story:s[7]}));
+const rarityColors={N:'#a7b3b1',R:'#7faed7',SR:'#b095db',SSR:'#e0b85e'},elements={火:'🔥',水:'💧',風:'🍃',雷:'⚡',光:'☀️',暗:'🌙'};
+const defaultSave=()=>({stones:3000,pulls:0,pity:0,owned:{},specific:{},universal:{N:0,R:0,SR:0,SSR:0},showcase:null,form:{},seen:{},tutorial:false,started:false,bgm:40,sfx:60,achievements:{},daily:{},shop:{},raiseSelected:null});
+let save;try{save={...defaultSave(),...JSON.parse(localStorage.getItem(KEY)||'{}')}}catch{save=defaultSave()};save.owned??={};save.specific??={};save.universal??={N:0,R:0,SR:0,SSR:0};save.form??={};save.seen??={};save.raiseSelected??=null;save.daily??={};save.achievements??={};save.shop??={};let sourceReturn=null;let taskTab="daily",notifyQueue=[],notifyBusy=false;let raiseOnly=false;let dexFilter={rarity:'all',element:'all',status:'all',sort:'default'},dexIndex=null,dexReturn=null;let page='home',modalLocked=false,hatching=false,tutorialIndex=0;let audioCtx=null,musicTimer=null,toastTimer=null;
+const dailySpecs=[{id:'login',icon:'🗓️',name:'森林每日報到',desc:'今天進入魔法森林',reward:100},{id:'dex',icon:'📖',name:'翻閱萌寵圖鑑',desc:'今天拜訪圖鑑一次',reward:100},{id:'raise',icon:'⭐',name:'拜訪萌寵養成室',desc:'今天進入養成室一次',reward:100}];
+const achSpecs=[
+ ...[{n:1,stone:100},{n:10,stone:300},{n:30,stone:600},{n:50,stone:900},{n:150,stone:900},{n:250,stone:900},{n:350,stone:900}].map(x=>({id:'pull'+x.n,name:`累積召喚 ${x.n} 次`,desc:'與森林夥伴締結更多羈絆',kind:'pull',goal:x.n,reward:{stones:x.stone}})),
+ ...[{n:3,stone:150},{n:8,stone:350},{n:15,stone:600},{n:22,stone:900}].map(x=>({id:'collect'+x.n,name:`發現 ${x.n} 種萌寵`,desc:'探索更多森林裡的奇遇',kind:'collect',goal:x.n,reward:{stones:x.stone}})),
+ {id:'star2',name:'第一次升星',desc:'培育出一隻二星萌寵',kind:'star2',goal:1,reward:{stones:200,universal:{R:2}}},
+ {id:'star4',name:'四星的羈絆',desc:'培育出一隻四星萌寵',kind:'star4',goal:1,reward:{stones:350,universal:{SR:2}}},
+ {id:'star5',name:'五星森林奇蹟',desc:'讓一隻萌寵進化到五星',kind:'star5',goal:1,reward:{stones:500,universal:{SSR:1}}}
+];
+function localDay(){let d=new Date();return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`}
+function resetDailyIfNeeded(){let day=localDay();if(save.daily.date===day)return;save.daily={date:day,completed:{},claimed:{},allDoneShown:false};persist()}
+function shopClaimedToday(){return save.shop?.lastClaim===localDay()}
+function shopReady(){return !shopClaimedToday()}
+function claimShop(){
+ if(shopClaimedToday()){toast('今天的免費禮包已經領取，明天再來吧 ✧');render();return}
+ const day=localDay();save.shop={...save.shop,lastClaim:day};save.stones+=200;
+ persist();render();sound('pop');
+ modal(`<div class="shop-reward-sparkles">✦ ✧ ✦</div><div class="shop-reward-gem">◆</div><h2>每日森林祝福！</h2><p>獲得召喚石 <b>×200</b></p><div class="info-strip">已經放進你的召喚石背包 ✧<br>明天 00:00 後可以再次領取</div><div class="modal-actions"><button class="primary" data-action="shopRewardClose">開心收下 ✧</button></div>`);
+}
+function shopHTML(){
+ const claimed=shopClaimedToday();
+ return `<div class="eyebrow">FOREST MARKET · DAILY GIFT</div><h1 class="page-title">森林商店 ✧</h1><p class="subtitle">小精靈每天都準備一份祝福，記得來領取免費的召喚石。</p>
+ <section class="shop-scene"><div class="shop-sparkles">✧　✦　✧</div><div class="shop-mushrooms">🍄 <span>🌿</span> 🍄</div><div class="shop-gift-art"><span>✧</span>◆<span>✧</span></div><div class="shop-title">每日免費召喚石禮包</div><p>每天一次的森林贈禮，不需要花費任何召喚石。</p><div class="shop-amount"><span>◆</span> 召喚石 <strong>×200</strong></div>
+ <button class="shop-claim ${claimed?'claimed':''}" data-action="shopClaim" ${claimed?'disabled':''}>${claimed?'✓ 今日已領取':'✦ 免費領取 200 顆召喚石'}</button><div class="shop-reset">${claimed?'今日的祝福已領取，明天再來看看！':'今日的免費禮包尚未領取'}<br>每日於裝置當地時間 00:00 重置</div></section>
+`;
+}
+function achProgress(a){if(a.kind==='pull')return save.pulls;if(a.kind==='collect')return countOwned();if(a.kind.startsWith('star'))return Object.values(save.owned).filter(o=>o&&o.stars>=Number(a.kind.slice(4))).length;return 0}
+function taskReady(kind){resetDailyIfNeeded();return kind==='daily'?dailySpecs.some(x=>save.daily.completed[x.id]&&!save.daily.claimed[x.id]):achSpecs.some(x=>achProgress(x)>=x.goal&&!save.achievements[x.id])}
+function taskNotify(text,kind='daily'){notifyQueue.push({text,kind});showNextNotice()}
+function showNextNotice(){if(notifyBusy||!notifyQueue.length||hatching||document.querySelector('.raise-success'))return;notifyBusy=true;let n=notifyQueue.shift();let el=document.createElement('div');el.className='task-notice '+n.kind;el.textContent=(n.kind==='daily'?'🌿 ✧ ':'✦ ✨ ')+n.text;document.body.appendChild(el);setTimeout(()=>{el.remove();notifyBusy=false;showNextNotice()},2100)}
+function finishDaily(id){resetDailyIfNeeded();if(save.daily.completed[id])return;save.daily.completed[id]=true;taskNotify(`${dailySpecs.find(x=>x.id===id)?.name||'每日任務'} 已完成！`);if(dailySpecs.every(x=>save.daily.completed[x.id])&&!save.daily.allDoneShown){save.daily.allDoneShown=true;taskNotify('今日任務全部完成！')}persist();updateTop()}
+function checkAchievements(){save.achUnlocked??={};for(const a of achSpecs){if(achProgress(a)>=a.goal&&!save.achUnlocked[a.id]){save.achUnlocked[a.id]=true;taskNotify(`成就解鎖：${a.name}`,'achievement')}}persist();updateTop()}
+function rewardString(reward){return [`💎 召喚石 ×${reward.stones||0}`,...Object.entries(reward.universal||{}).filter(([,n])=>n).map(([r,n])=>`✦ ${r} 通用碎片 ×${n}`)].join('<br>')}
+function grantReward(reward){save.stones+=(reward.stones||0);for(const [r,n] of Object.entries(reward.universal||{}))save.universal[r]=(save.universal[r]||0)+n}
+function rewardModal(reward){modal(`<div class="task-reward-effect">✧ ✦ ✧</div><h2>領取成功！</h2><div class="task-reward-summary">${rewardString(reward)}</div><p>獎勵已加入你的森林背包。</p><div class="modal-actions"><button class="primary" data-action="taskRewardClose">開心收下 ✧</button></div>`)}
+function claimTasks(kind,id=null){resetDailyIfNeeded();let reward={stones:0,universal:{}};let any=false;
+ if(kind==='daily'){for(const x of dailySpecs){if(id&&x.id!==id)continue;if(!save.daily.completed[x.id]||save.daily.claimed[x.id])continue;save.daily.claimed[x.id]=true;reward.stones+=x.reward;any=true}}
+ else{for(const x of achSpecs){if(id&&x.id!==id)continue;if(achProgress(x)<x.goal||save.achievements[x.id])continue;save.achievements[x.id]=true;reward.stones+=x.reward.stones||0;for(const [r,n] of Object.entries(x.reward.universal||{}))reward.universal[r]=(reward.universal[r]||0)+n;any=true}}
+ if(!any)return;grantReward(reward);persist();render();rewardModal(reward)}
+function taskHTML(){resetDailyIfNeeded();let done=dailySpecs.filter(x=>save.daily.completed[x.id]).length;let dailyReady=taskReady('daily'),achReady=taskReady('achievement');
+ let dailyCards=dailySpecs.map(x=>({...x,done:!!save.daily.completed[x.id],claimed:!!save.daily.claimed[x.id]})).sort((a,b)=>(a.claimed?2:a.done?0:1)-(b.claimed?2:b.done?0:1)).map(x=>`<article class="task-card ${x.done&&!x.claimed?'claimable':''} ${x.claimed?'claimed':''}"><span class="task-icon">${x.icon}</span><div class="task-content"><strong>${x.name}</strong><p>${x.desc}</p><div class="task-prize">💎 召喚石 ×${x.reward}</div></div>${x.claimed?'<span class="task-check">✓</span>':''}<button class="task-claim" ${!x.done||x.claimed?'disabled':''} data-action="taskClaim" data-kind="daily" data-id="${x.id}">${x.claimed?'已領取':x.done?'領取獎勵':'未完成'}</button></article>`).join('');
+ let achievements=achSpecs.map(x=>({...x,progress:achProgress(x),claimed:!!save.achievements[x.id]})).sort((a,b)=>{let rank=x=>x.claimed?2:x.progress>=x.goal?0:1;return rank(a)-rank(b)||((rank(a)===1?b.progress/b.goal-a.progress/a.goal:0))});
+ let achCards=achievements.map(x=>{let completed=x.progress>=x.goal;return `<article class="task-card ach-card ${completed&&!x.claimed?'claimable':''} ${x.claimed?'claimed':''}"><span class="task-icon">🏅</span><div class="task-content"><strong>${x.name}</strong><p>${x.desc}</p><div class="ach-progress"><div style="width:${Math.min(100,x.progress/x.goal*100)}%;background:${completed?'#d7ae62':'#7da88a'}"></div></div><small>${Math.min(x.progress,x.goal)} / ${x.goal}</small><div class="task-prize">${rewardString(x.reward)}</div></div><button class="task-claim" ${!completed||x.claimed?'disabled':''} data-action="taskClaim" data-kind="achievement" data-id="${x.id}">${x.claimed?'已領取':completed?'領取獎勵':'未完成'}</button></article>`}).join('');
+ return `<div class="eyebrow">FOREST QUESTS · DAILY MAGIC</div><h1 class="page-title">森林任務 ✧</h1><p class="subtitle">每一段小小的旅程，都會累積成森林的奇蹟。</p><div class="task-tabs"><button data-action="taskTab" data-tab="daily" class="${taskTab==='daily'?'active':''}">每日任務 ${dailyReady?'<i class="task-red-dot"></i>':''}</button><button data-action="taskTab" data-tab="achievement" class="${taskTab==='achievement'?'active':''}">成就 ${achReady?'<i class="task-red-dot"></i>':''}</button></div>${taskTab==='daily'?`<section class="task-overview"><div class="task-overview-top"><strong>今日任務：${done}/3</strong><span>每天 00:00 重置 · 未領取獎勵逾期失效</span></div><div class="task-progress"><div style="width:${done/3*100}%;background:${done===3?'#d8ae5b':'#79a187'}"></div></div></section><button class="task-all" ${!dailyReady?'disabled':''} data-action="taskAll" data-kind="daily">${dailyReady?'✧ 全部領取':'暫無可領獎勵'}</button><div class="task-list">${dailyCards}</div>`:`<button class="task-all" ${!achReady?'disabled':''} data-action="taskAll" data-kind="achievement">${achReady?'✧ 全部領取':'暫無可領獎勵'}</button><div class="task-list">${achCards}</div>`}`;
+}
+function persist(){try{localStorage.setItem(KEY,JSON.stringify(save))}catch{toast('無法儲存進度：請確認瀏覽器允許本機儲存')}}
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function svgPet(p,evolved=false){
+ const c=p.base,l=p.light,r=rarityColors[p.rarity],shape=p.shape;
+ const ear=(x,y,rot=0,len=45)=>`<g transform="rotate(${rot} ${x} ${y+len})"><path d="M${x-17} ${y+len} Q${x-22} ${y+9} ${x} ${y} Q${x+22} ${y+9} ${x+17} ${y+len}Z" fill="${c}" stroke="#718079" stroke-width="2"/><path d="M${x-8} ${y+len-8} Q${x-11} ${y+15} ${x} ${y+14} Q${x+11} ${y+15} ${x+8} ${y+len-8}Z" fill="${l}"/></g>`;
+ const leaf=(x,y,rot=0,col='#8cbd79')=>`<path d="M${x} ${y}q-21 -31 7 -36q29 16 -7 36Z" fill="${col}" transform="rotate(${rot} ${x} ${y})" stroke="#729c68" stroke-width="1.5"/>`;
+ let rear='',ears='',crest='',tail='',wings='',front='',face='';
+ if(['fox','cat','wolf','ferret','squirrel'].includes(shape))ears=ear(70,23,-18,62)+ear(140,23,18,62);
+ if(['bunny','mouse'].includes(shape))ears=ear(71,2,-9,81)+ear(138,2,9,81);
+ if(['deer','sheep','lion','griffin'].includes(shape))ears=ear(55,55,-58,45)+ear(155,55,58,45);
+ if(shape==='bat')ears=ear(65,18,-25,67)+ear(145,18,25,67);
+ if(shape==='dragon')ears=`<path d="M65 85L40 24L89 65Z M145 85L170 24L121 65Z" fill="${c}" stroke="${r}" stroke-width="3"/>`;
+ if(shape==='bird')ears=`<path d="M67 90L35 49L83 70Z M143 90L175 49L127 70Z" fill="${c}"/>`;
+ if(shape==='deer')crest=`<g fill="none" stroke="#b99c70" stroke-width="7" stroke-linecap="round"><path d="M78 79L66 32L48 19M66 45L88 21M132 79L144 32L162 19M144 45L122 21"/></g>`;
+ if(shape==='sheep')crest=`<path d="M65 90C28 72 45 40 75 60M145 90C182 72 165 40 135 60" fill="none" stroke="#d2b88a" stroke-width="15" stroke-linecap="round"/>`;
+ if(shape==='lion')rear=`<circle cx="105" cy="103" r="73" fill="#d9a16d"/>`;
+ if(shape==='whale'){rear=`<path d="M62 149Q13 130 23 68Q48 78 70 111M148 149Q197 130 187 68Q162 78 140 111" fill="${c}" stroke="#85abc6" stroke-width="3"/>`;crest=`<path d="M105 54Q97 32 105 19" fill="none" stroke="#70b5d5" stroke-width="5" stroke-linecap="round"/>`;}
+ if(shape==='bat')wings=`<path d="M68 140Q24 60 11 100L33 110L29 151L63 163Z M142 140Q186 60 199 100L177 110L181 151L147 163Z" fill="${c}" stroke="${r}" stroke-width="3"/>`;
+ if(['bird','griffin','dragon'].includes(shape)||evolved)wings+=`<path d="M65 146Q20 75 15 126L44 120L56 169Z M145 146Q190 75 195 126L166 120L154 169Z" fill="${l}" stroke="${r}" stroke-width="3"/>`;
+ if(['fox','wolf','cat','squirrel','ferret','dragon'].includes(shape))tail=`<path d="M147 178Q210 186 188 117Q193 160 155 153Z" fill="${c}" stroke="${r}" stroke-width="3"/>`;
+ if(shape==='blob'||shape==='puff')ears=`<circle cx="54" cy="92" r="20" fill="${c}"/><circle cx="156" cy="92" r="20" fill="${c}"/>`;
+ if(shape==='griffin')crest=`<path d="M84 71L105 34L126 71Z" fill="${r}"/>`;
+ if(shape==='dragon')crest=`<path d="M93 76L105 49L117 76Z" fill="${r}"/>`;
+ if(shape==='bird')face=`<path d="M98 122L112 122L105 134Z" fill="#d9a56b"/>`;
+ if(shape==='cat'||shape==='wolf')crest=`<path d="M94 76L105 60L116 76Z" fill="${l}"/>`;
+ if(p.id===10){
+   ears=leaf(73,85,-28)+leaf(137,85,28);
+   crest=leaf(103,57,0)+leaf(103,57,90)+leaf(103,57,180)+leaf(103,57,270);
+   tail=`<path d="M145 167Q182 168 180 132" fill="none" stroke="#79aa72" stroke-width="10" stroke-linecap="round"/>`+leaf(180,130,48);
+   wings=leaf(58,145,-48)+leaf(151,145,48);
+ }
+ if(evolved)front=`<g fill="${r}"><path d="M105 35L111 50L126 55L114 65L117 81L105 74L93 81L96 65L84 55L99 50Z"/><circle cx="21" cy="75" r="4"/><circle cx="189" cy="75" r="4"/><path d="M28 184l4 -9 4 9 9 4 -9 4 -4 9 -4 -9 -9 -4Z"/></g>`;
+ const ornament={火:'✦',水:'◌',風:'❧',雷:'ϟ',光:'✧',暗:'☾'}[p.element];
+ return `<svg viewBox="0 0 210 235" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="${esc(p.name)}${evolved?'進化型態':''}" preserveAspectRatio="xMidYMid meet">
+ <ellipse cx="105" cy="220" rx="66" ry="8" fill="#b5c5b7"/>
+ ${tail}${wings}${rear}
+ <ellipse cx="105" cy="168" rx="55" ry="53" fill="${c}" stroke="#75877c" stroke-width="1.5"/>
+ <ellipse cx="105" cy="174" rx="35" ry="34" fill="${l}"/>
+ ${ears}${crest}
+ <circle cx="105" cy="99" r="51" fill="${c}" stroke="#75877c" stroke-width="1.5"/>
+ <ellipse cx="57" cy="168" rx="18" ry="16" fill="${c}"/><ellipse cx="153" cy="168" rx="18" ry="16" fill="${c}"/>
+ <ellipse cx="79" cy="106" rx="5.5" ry="7.5" fill="#394f55"/><ellipse cx="131" cy="106" rx="5.5" ry="7.5" fill="#394f55"/>
+ <circle cx="80" cy="103" r="2" fill="#fff"/><circle cx="132" cy="103" r="2" fill="#fff"/>
+ <ellipse cx="64" cy="125" rx="12" ry="7" fill="#e7a8a9"/><ellipse cx="146" cy="125" rx="12" ry="7" fill="#e7a8a9"/>
+ <path d="M99 125Q105 132 111 125" stroke="#58696b" stroke-width="3" fill="none" stroke-linecap="round"/>
+ ${face}<text x="105" y="187" text-anchor="middle" font-size="22" fill="${r}">${ornament}</text>${front}
+ </svg>`;
+}
+function isNight(){let h=new Date().getHours();return h<6||h>=18}
+function countOwned(){return Object.keys(save.owned).filter(k=>save.owned[k]).length}
+function updateTop(){document.getElementById('stones').textContent=save.stones.toLocaleString('zh-TW');let n=species.some(p=>save.owned[p.id]&&!save.seen[p.id]);document.querySelector('.nav[data-page="tasks"]')?.classList.toggle('has-new',taskReady('daily')||taskReady('achievement'));document.querySelector('.nav[data-page="shop"]')?.classList.toggle('has-new',shopReady());document.querySelectorAll('.nav[data-page="dex"],.nav[data-page="raise"]').forEach(el=>el.classList.toggle('has-new',n))}
+function fitScreen(){
+  const app=document.querySelector('.app');
+  if(!app)return;
+  app.style.zoom='1';app.style.width='';app.classList.remove('fit-screen');
+  if(window.innerWidth<=900)return; // 手機維持正常響應式排版
+  app.classList.add('fit-screen');
+  const available=window.innerHeight-8;
+  const natural=app.scrollHeight;
+  const factor=Math.min(1,Math.max(.42,available/Math.max(1,natural)));
+  if(factor<.999){app.style.zoom=String(factor);app.style.width=(100/factor)+'%'}
+}
+window.addEventListener('resize',()=>requestAnimationFrame(fitScreen));
+function render(){updateTop();document.querySelectorAll('.nav').forEach(b=>b.classList.toggle('active',b.dataset.page===page));document.getElementById('main').innerHTML=page==='home'?homeHTML():page==='summon'?summonHTML():page==='dex'?dexHTML():page==='raise'?raiseHTML():page==='tasks'?taskHTML():page==='shop'?shopHTML():`<div class="unavailable"><div style="font-size:65px">🌱</div><h2>森林的下一頁，正在萌芽</h2><p>此頁面將於後續製作階段開放。<br>目前可以先體驗主城與完整召喚系統。</p><button class="primary" data-action="goto" data-target="home">返回主城</button></div>`;requestAnimationFrame(fitScreen)}
+function homeHTML(){let p=species[save.showcase],night=isNight();return `<div class="eyebrow">THE WHISPERING WOODS</div><h1 class="page-title">魔法森林 <span style="font-size:17px;color:#9aaf98">✧</span></h1><p class="subtitle">${night?'夜色悄悄降臨，螢火蟲正在等你。':'陽光穿過樹葉，今天也有新的奇遇。'}歡迎回到你的森林小屋。</p><div class="hero"><div class="forest ${night?'night':''}"><div class="sun"></div><div class="stars"></div><div class="hill h1"></div><div class="hill h2"></div><div class="tree t3"></div><div class="tree t4"></div><div class="tree t1"></div><div class="tree t2"></div><span class="mushroom m1">🍄</span><span class="mushroom m2">🍄</span><span class="flower f1">✿</span><span class="flower f2">✿</span><div class="firefly a"></div><div class="firefly b"></div><div class="firefly c"></div><div class="platform"></div></div><div class="scene-label">${night?'☾ 月光森林 · 夜晚':'☀ 晨光森林 · 白天'}</div><div class="showcase" id="showcase" title="點擊與萌寵互動">${p?svgPet(p,save.form[p.id]==='evolved'&&(save.owned[p.id]?.stars||1)>=5):'<div class="empty-altar">✧ 尚未擁有萌寵 ✧<br><small>召喚你的第一位森林夥伴吧！</small></div>'}</div><div id="speech" class="speech hidden"></div><div class="scene-actions"><button class="pill" data-action="pick">♧ 更換萌寵</button><button class="pill" data-action="goto" data-target="summon">✧ 前往召喚</button></div></div><div class="rowcards"><div class="mini-card"><span class="emoji">🥚</span><h3>魔法召喚</h3><p>喚醒沉睡的魔法蛋，與奇幻萌寵相遇。</p></div><div class="mini-card"><span class="emoji">🌿</span><h3>森林夥伴</h3><p>目前已遇見 <b>${countOwned()} / 22</b> 種萌寵。</p></div><div class="mini-card"><span class="emoji">✨</span><h3>今天的魔法</h3><p>${save.pulls===0?'第一次召喚有特別驚喜等著你。':`已累積召喚 ${save.pulls} 次，下一段故事正在展開。`}</p></div></div>`}
+function summonHTML(){return `<div class="section-head"><div><div class="eyebrow">THE SUMMONING GROVE</div><h1 class="page-title">星願召喚所 ✧</h1><p class="subtitle">每顆魔法蛋裡，都藏著一段等待相遇的故事。</p></div><button class="pill" data-action="rates">ⓘ 機率資訊</button></div><div class="summon-wrap"><div class="egg-stage"><div class="magic-ring"></div><div class="big-egg">🥚</div><div class="stage-caption">✧ 輕聲呼喚，奇蹟便會甦醒 ✧</div></div><div class="summon-panel"><div class="eyebrow">MAGIC RESONANCE</div><h2>與森林締結羈絆</h2><p>每次召喚都有機會獲得 N、R、SR 或傳說 SSR 萌寵。重複召喚可收集升星碎片。</p><div class="pity"><span>✦ SSR 保底魔力</span><span>${save.pity} / 50</span></div><div class="progress"><div style="width:${save.pity/50*100}%"></div></div><p class="small">距離必得 SSR 最多還需 <b>${50-save.pity}</b> 抽。單抽與十連共用保底計數。</p>${save.pulls===0?'<div class="info-strip">🌟 初次召喚特別祝福：第一抽必定 SR（75%）或 SSR（25%）！</div>':''}<button class="gacha-btn" data-action="summon" data-count="1"><span>✧ 召喚一次</span><span>◆ 100</span></button><button class="gacha-btn ten" data-action="summon" data-count="10"><span>✦ 召喚十次 <small>（至少一隻 SR 以上）</small></span><span>◆ 900</span></button><button class="text-link" data-action="rates">查看召喚機率與保底規則 →</button><div class="info-strip">🍃 目前已發現 ${countOwned()} / 22 種萌寵。所有召喚結果會自動儲存於此瀏覽器。</div></div></div>`}
+const rarityOrder={SSR:0,SR:1,R:2,N:3},elementOrder={火:0,水:1,風:2,雷:3,光:4,暗:5};
+function sortedDex(){return species.filter(p=>(dexFilter.rarity==='all'||p.rarity===dexFilter.rarity)&&(dexFilter.element==='all'||p.element===dexFilter.element)&&(dexFilter.status==='all'||(dexFilter.status==='owned'?!!save.owned[p.id]:!save.owned[p.id]))).sort((a,b)=>{if(dexFilter.sort==='element')return elementOrder[a.element]-elementOrder[b.element]||rarityOrder[a.rarity]-rarityOrder[b.rarity]||a.id-b.id;if(dexFilter.sort==='name')return a.name.localeCompare(b.name,'zh-Hant');if(dexFilter.sort==='stars')return (save.owned[b.id]?.stars||0)-(save.owned[a.id]?.stars||0)||rarityOrder[a.rarity]-rarityOrder[b.rarity]||a.id-b.id;return rarityOrder[a.rarity]-rarityOrder[b.rarity]||elementOrder[a.element]-elementOrder[b.element]||a.id-b.id})}
+function dexHTML(){let total=countOwned(),pct=Math.round(total/species.length*100),list=sortedDex();let opts=(label,key,values)=>`<label class="dex-select">${label}<select data-dex-filter="${key}">${values.map(([v,t])=>`<option value="${v}" ${dexFilter[key]===v?'selected':''}>${t}</option>`).join('')}</select></label>`;
+return `<div class="eyebrow">THE FOREST COMPENDIUM</div><h1 class="page-title">萌寵圖鑑 ✧</h1><p class="subtitle">每一次相遇，都會為森林的故事添上一頁。</p><section class="dex-progress"><div><div class="eyebrow">COLLECTION PROGRESS</div><h2>已收集 <strong>${total}</strong> / ${species.length} 隻 <span class="dex-percent">${pct}%</span></h2><div class="progress"><div style="width:${pct}%"></div></div></div><span class="dex-book">📖</span></section><div class="dex-toolbar">${opts('稀有度','rarity',[['all','全部稀有度'],['SSR','SSR · 傳說'],['SR','SR · 超稀有'],['R','R · 稀有'],['N','N · 普通']])}${opts('屬性','element',[['all','全部屬性'],...Object.keys(elements).map(x=>[x,`${elements[x]} ${x}`])])}${opts('收集狀態','status',[['all','全部萌寵'],['owned','已獲得'],['locked','尚未發現']])}${opts('排序方式','sort',[['default','稀有度優先'],['element','屬性優先'],['stars','星級優先'],['name','名稱排序']])}</div><div class="dex-count">顯示 ${list.length} 隻萌寵 ${total===22?'<span class="guardian">✦ 森之守護者 ✦</span>':''}</div><div class="dex-grid">${list.map(p=>{let owned=save.owned[p.id],fresh=owned&&!save.seen[p.id];return `<button class="dex-card ${owned?'unlocked':'locked'}" data-dex-open="${p.id}" aria-label="${owned?esc(p.name):'尚未發現的萌寵'}，${p.rarity}，${p.element}">${fresh?'<span class="dex-new">NEW!</span>':''}<span class="dex-card-visual">${owned?svgPet(p,save.form[p.id]==='evolved'&&owned.stars>=5):svgPet(p).replace(/aria-label="[^"]*"/,'aria-label="神祕萌寵"')}</span><span class="dex-card-name">${owned?esc(p.name):'？？？'}</span><span class="dex-tags"><span class="rarity ${p.rarity}">${p.rarity}</span><span>${elements[p.element]} ${p.element}</span></span>${owned?`<span class="dex-stars">${'★'.repeat(owned.stars)}${'☆'.repeat(5-owned.stars)}</span>`:'<span class="dex-unknown">尚未發現</span>'}</button>`}).join('')}</div>${list.length?'':'<div class="dex-empty">🍃 目前沒有符合條件的萌寵，試試其他篩選方式吧。</div>'}`}
+
+const starCosts=[0,2,3,4,5];
+function ownedForRaise(){return species.filter(p=>!!save.owned[p.id]).sort((a,b)=>(save.owned[b.id].stars||1)-(save.owned[a.id].stars||1)||rarityOrder[a.rarity]-rarityOrder[b.rarity]||a.id-b.id)}
+function raiseResources(p){const o=save.owned[p.id];if(!o)return null;let specific=Number(save.specific[p.id]||0),universal=Number(save.universal[p.rarity]||0),cost=starCosts[o.stars]||0;return {specific,universal,cost,total:specific+universal,can:o.stars<5&&specific+universal>=cost}}
+function selectRaise(id){if(!save.owned[id])return;save.raiseSelected=id;markSeen(id);persist();render()}
+function raiseHTML(){
+ const all=ownedForRaise();
+ if(!all.length)return `<div class="eyebrow">COMPANION GROWTH</div><h1 class="page-title">萌寵養成室 ✧</h1><section class="raise-empty"><div style="font-size:66px">🌱</div><h2>森林裡還沒有可以培育的夥伴</h2><p>前往召喚所，與第一隻萌寵相遇吧。</p><button class="primary" data-action="goto" data-target="summon">✧ 前往召喚</button></section>`;
+ let selected=save.raiseSelected!=null&&save.owned[save.raiseSelected]?species[save.raiseSelected]:all[0];
+ if(save.raiseSelected!==selected.id){save.raiseSelected=selected.id;persist()}
+ let o=save.owned[selected.id],res=raiseResources(selected),max=o.stars>=5;
+ const cards=all.filter(p=>!raiseOnly||raiseResources(p).can);
+ return `<div class="eyebrow">COMPANION GROWTH · MAGIC GARDEN</div><h1 class="page-title">萌寵養成室 ✧</h1><p class="subtitle">用重逢的碎片累積羈絆，讓森林夥伴閃耀成長。</p>
+ <div class="raise-layout">
+ <section class="raise-list">
+ <div class="raise-list-head"><strong>我的萌寵 <span>${all.length} 隻</span></strong><label class="raise-check"><input type="checkbox" data-raise-filter ${raiseOnly?'checked':''}/> 只顯示可升星萌寵</label></div>
+ <div class="raise-grid">${cards.map(p=>{let op=save.owned[p.id],rs=raiseResources(p);return `<button class="raise-card ${p.id===selected.id?'selected':''}" data-raise-select="${p.id}" aria-label="${esc(p.name)}，${op.stars}星">${!save.seen[p.id]?'<span class="raise-new">NEW!</span>':''}${rs.can?'<span class="raise-ready" title="可升星">★ 可升星</span>':''}<div class="raise-thumb">${svgPet(p,op.stars>=5&&save.form[p.id]==='evolved')}</div><b>${esc(p.name)}</b><small class="rarity ${p.rarity}">${p.rarity} · ${elements[p.element]} ${p.element}</small><span class="raise-card-stars">${'★'.repeat(op.stars)}${'☆'.repeat(5-op.stars)}</span></button>`}).join('')||'<div class="raise-no-ready">目前沒有可以升星的萌寵。<br>重複召喚可獲得碎片 ✧</div>'}</div>
+ </section>
+ <section class="raise-stage"><div class="raise-stage-top"><span class="rarity ${selected.rarity}">${selected.rarity} · ${elements[selected.element]} ${selected.element}</span><button class="raise-link" data-action="raiseDex">查看圖鑑 ↗</button></div><h2>${esc(selected.name)}</h2><div class="raise-main-art">${svgPet(selected,max&&save.form[selected.id]==='evolved')}</div><div class="raise-stars">${'★'.repeat(o.stars)}${'☆'.repeat(5-o.stars)}</div>
+ ${max?`<div class="raise-max-badge">${dexBadge(selected)}<strong>已達五星 · 進化解鎖！</strong></div>`:`<div class="raise-next">距離 ${o.stars+1} 星還需 <b>${res.cost}</b> 個碎片</div><div class="raise-progress"><div style="width:${Math.min(100,res.total/res.cost*100)}%"></div></div><div class="raise-count">${res.total} / ${res.cost} 個碎片</div>`}
+ <div class="raise-fragments"><span>✧ 專屬碎片 <b>${res.specific}</b></span><span>✦ ${selected.rarity} 通用碎片 <b>${res.universal}</b></span></div>
+ ${max?`<div class="raise-form-title">選擇展示型態</div><div class="raise-form-grid"><button class="raise-form ${save.form[selected.id]!=='evolved'?'chosen':''}" data-action="raiseForm" data-form="normal">${svgPet(selected)}<span>普通型態</span></button><button class="raise-form ${save.form[selected.id]==='evolved'?'chosen':''}" data-action="raiseForm" data-form="evolved">${svgPet(selected,true)}<span>五星進化型態</span></button></div>`:`<button class="raise-upgrade ${res.can?'ready':''}" data-action="raiseUpgrade">✦ 升星至 ${o.stars+1} 星 ${res.can?'':'· 查看所需碎片'}</button>`}
+ </section></div>`;
+}
+function raiseUpgrade(){
+ let id=save.raiseSelected,p=species[id],o=save.owned[id];if(!p||!o)return;
+ let r=raiseResources(p);if(o.stars>=5){toast('這隻萌寵已經達到五星！');return}
+ if(!r.can){modal(`<div style="font-size:45px">🌱</div><h2>碎片還不夠</h2><p><b>${esc(p.name)}</b> 升到 ${o.stars+1} 星需要 ${r.cost} 個碎片。<br>目前共有 ${r.total} 個，還差 <b>${r.cost-r.total}</b> 個。</p><div class="info-strip">專屬碎片 ${r.specific} · ${p.rarity} 通用碎片 ${r.universal}<br>重複召喚可取得碎片。</div><div class="modal-actions"><button class="secondary" data-action="close">知道了</button><button class="primary" data-action="raiseToSummon">前往召喚</button></div>`);return}
+ let takeSpecific=Math.min(r.specific,r.cost),takeUniversal=r.cost-takeSpecific;
+ modal(`<div class="eyebrow">STAR ASCENSION</div><div style="font-size:42px">✦</div><h2>確認萌寵升星</h2><div class="raise-confirm-art">${svgPet(p)}</div><h3>${esc(p.name)}</h3><p class="raise-confirm-stars">${'★'.repeat(o.stars)}${'☆'.repeat(5-o.stars)}　→　${'★'.repeat(o.stars+1)}${'☆'.repeat(4-o.stars)}</p><div class="info-strip">優先消耗專屬碎片：<b>${takeSpecific}</b><br>${p.rarity} 通用碎片：<b>${takeUniversal}</b><br>合計：<b>${r.cost}</b> 個</div><div class="modal-actions"><button class="secondary" data-action="close">取消</button><button class="primary" data-action="raiseCommit" data-id="${id}">確認升星 ✦</button></div>`);
+}
+function raiseCommit(id){
+ const p=species[id],o=save.owned[id];if(!p||!o||id!==save.raiseSelected)return;
+ const r=raiseResources(p);if(!r?.can)return;
+ const take=Math.min(r.specific,r.cost),univ=r.cost-take;
+ save.specific[id]=r.specific-take;save.universal[p.rarity]=r.universal-univ;
+ o.stars++;const evolved=o.stars===5;if(evolved)save.form[id]='evolved';
+ persist();checkAchievements();closeModal(true);render();sound(evolved?'ssr':'pop');
+ modal(`<div class="raise-success ${evolved?'raise-evolution':''}"><div class="raise-magic">✦ ✧ ✦</div><div class="raise-success-art">${svgPet(p,evolved)}</div><h2>${evolved?'五星進化成功！':'升星成功！'}</h2><p>${esc(p.name)} 現在是 <b>${o.stars} 星</b> 夥伴了！${evolved?'<br>已自動切換為進化型態，可在養成室切回普通型態。':''}</p><div class="raise-stars">${'★'.repeat(o.stars)}${'☆'.repeat(5-o.stars)}</div><div class="modal-actions"><button class="primary" data-action="raiseSuccessClose">繼續培育 ✧</button></div></div>`,false,true);
+}
+function raiseForm(form){const id=save.raiseSelected;if(!save.owned[id]||save.owned[id].stars<5)return;save.form[id]=form;persist();render();toast(form==='evolved'?'已切換五星進化型態 ✧':'已切換普通型態 ✧')}
+function openDex(id,from='dex'){dexReturn=from;dexIndex=id;markSeen(id);showDexDetail()}
+function markSeen(id){if(save.owned[id]&&!save.seen[id]){save.seen[id]=true;persist();updateTop()}}
+function formatFirstDate(d){if(!d)return '未知';let date=new Date(d);return isNaN(+date)?'未知':date.toLocaleDateString('zh-TW')}
+function dexBadge(p){return `<div class="evolve-badge ${p.rarity.toLowerCase()}"><span>${elements[p.element]}</span><b>★★★★★</b><small>五星進化紀念</small></div>`}
+function showDexDetail(){let p=species[dexIndex];if(!p)return;let owned=save.owned[p.id],stars=owned?.stars||0,canEvolve=stars>=5,evolved=canEvolve&&save.form[p.id]==='evolved';let arr=sortedDex();if(!arr.some(x=>x.id===p.id))arr=species;let idx=arr.findIndex(x=>x.id===p.id);let prev=arr[(idx+arr.length-1)%arr.length].id,next=arr[(idx+1)%arr.length].id;
+modal(`<div class="dex-detail"><div class="eyebrow">FOREST COMPANION · ${idx+1} / ${arr.length}</div><div class="detail-columns"><div class="detail-left"><div class="detail-visual ${owned?'':'mystery'}" ${owned?'data-detail-pet="1"':''}>${owned?svgPet(p,evolved):svgPet(p).replace(/aria-label="[^"]*"/,'aria-label="神祕萌寵"')}${owned?'<span class="detail-hint">輕點萌寵，讓牠動一動 ✧</span>':''}</div></div><div class="detail-right"><div class="rarity ${p.rarity}">${p.rarity} · ${elements[p.element]} ${p.element}</div><h2>${owned?esc(p.name):'？？？ · 尚未發現'}</h2>${owned?`<div class="detail-stars">${'★'.repeat(stars)}${'☆'.repeat(5-stars)}</div><p class="detail-personality">✿ 個性：${esc(p.personality)}</p><div class="detail-story">${esc(p.story)}</div><div class="detail-data"><span>初次相遇<br><b>${formatFirstDate(owned.firstDate)}</b></span><span>專屬碎片<br><b>${save.specific[p.id]||0}</b></span><span>${p.rarity} 通用碎片<br><b>${save.universal[p.rarity]||0}</b></span></div>${canEvolve?dexBadge(p):`<div class="detail-evolution">${stars}/5 星 · ${stars<5?'達到五星即可解鎖進化型態':'進化已解鎖'}</div>`}<div class="detail-forms"><div class="detail-form ${!evolved?'selected':''}">${svgPet(p)}<span>普通型態</span></div><div class="detail-form ${evolved?'selected':''} ${!canEvolve?'form-locked':''}">${svgPet(p,true)}<span>${canEvolve?'進化型態':'🔒 五星解鎖'}</span></div></div><div class="modal-actions"><button class="secondary" data-action="setShowcase" data-id="${p.id}">✧ 設為主城夥伴</button></div>`:`<p>森林中尚未留下牠的足跡。<br>透過魔法召喚，解開這段未知的相遇吧。</p><div class="detail-unknown">🔒 名稱、完整外型、個性與故事尚未解鎖</div>`}</div></div><div class="detail-nav"><button class="secondary" data-action="dexSwitch" data-id="${prev}">← 上一隻</button><button class="primary" data-action="dexClose">返回圖鑑</button><button class="secondary" data-action="dexSwitch" data-id="${next}">下一隻 →</button></div></div>`,true)}
+function dexSwitch(id){dexIndex=id;markSeen(id);showDexDetail()}
+function modal(content,wide=false,locked=false){modalLocked=locked;document.getElementById('modalRoot').innerHTML=`<div class="modal-shade"><div class="modal ${wide?'wide':''}">${locked?'':'<button class="close" data-action="close" aria-label="關閉">×</button>'}${content}</div></div>`;requestAnimationFrame(fitDetailModal)}
+function closeModal(force=false){if(modalLocked&&!force)return;document.getElementById('modalRoot').innerHTML='';modalLocked=false}
+function toast(msg){let root=document.getElementById('toastRoot');root.innerHTML=`<div class="toast">${esc(msg)}</div>`;clearTimeout(toastTimer);toastTimer=setTimeout(()=>root.innerHTML='',2600)}
+function confirmSummon(n){if(hatching)return;let cost=n===10?900:100;if(save.stones<cost){modal(`<div style="font-size:50px">💎</div><h2>召喚石不足</h2><p>還差 <b>${cost-save.stones}</b> 顆召喚石。<br>可透過每日任務、成就與商店免費禮包取得。</p><div class="modal-actions"><button class="primary" data-action="close">知道了</button><button class="secondary" data-action="source">查看取得方式</button></div>`);return}modal(`<div style="font-size:49px">🥚</div><h2>確認${n===10?'十連':'單次'}召喚</h2><p>將消耗 <b>◆ ${cost}</b> 召喚石，喚醒 ${n} 顆魔法蛋。<br>目前持有 ${save.stones.toLocaleString('zh-TW')} 顆。</p><div class="modal-actions"><button class="secondary" data-action="close">再想想</button><button class="primary" data-action="commit" data-count="${n}">✧ 確認召喚</button></div>`)}
+function weightedRarity(first=false,forceSSR=false,forceSR=false){if(forceSSR)return 'SSR';if(first)return Math.random()<.25?'SSR':'SR';let r=Math.random();if(forceSR){return r<.25?'SSR':'SR'}return r<.05?'SSR':r<.2?'SR':r<.55?'R':'N'}
+function draw(n){const out=[];let first=save.pulls===0;for(let i=0;i<n;i++){const mustSSR=save.pity>=49;const lastGuarantee=n===10&&i===9&&!out.some(x=>x.p.rarity==='SR'||x.p.rarity==='SSR');let rarity=weightedRarity(first&&i===0,mustSSR,lastGuarantee);let pool=species.filter(p=>p.rarity===rarity);let p=pool[Math.floor(Math.random()*pool.length)];let newSpecies=!save.owned[p.id];let newSSR=p.rarity==='SSR'&&newSpecies;let frag=0,universal=0;if(newSpecies){save.owned[p.id]={stars:1,firstDate:new Date().toISOString()};save.specific[p.id]=0;if(save.showcase===null)save.showcase=p.id}else if(save.owned[p.id].stars>=5){save.universal[p.rarity]=(save.universal[p.rarity]||0)+1;universal=1}else{frag={N:1,R:2,SR:3,SSR:5}[p.rarity];save.specific[p.id]=(save.specific[p.id]||0)+frag}save.pity=rarity==='SSR'?0:save.pity+1;save.pulls++;out.push({p,newSpecies,newSSR,frag,universal})}save.stones-=n===10?900:100;persist();checkAchievements();updateTop();return out}
+let hatchState=null;
+function startSummon(n){closeModal(true);hatching=true;const results=draw(n);hatchState={results,i:0,phase:'egg',skip:false,ssrQueue:[],ssrIndex:0};showEgg()}
+function showEgg(){let h=hatchState;if(h.i>=h.results.length){h.ssrQueue=h.results.filter(x=>x.newSSR);h.ssrIndex=0;return h.ssrQueue.length?showSSR():showSummary()}h.phase='egg';let x=h.results[h.i];modal(`<div class="hatch-counter">魔法蛋 ${h.i+1} / ${h.results.length}</div><div class="hatch-spark">✧ ✦ ✧</div><div class="hatch-egg">🥚</div><h2>魔力正在甦醒…</h2><p>輕觸魔法蛋，揭曉森林的奇遇。</p><div class="modal-actions"><button class="primary" data-action="reveal">✧ 敲開魔法蛋</button>${h.results.length>1?'<button class="secondary" data-action="skipHatch">略過孵化動畫</button>':''}</div>`,false,true);const egg=document.querySelector('.hatch-egg');if(egg)egg.addEventListener('click',()=>reveal()) ;sound('egg')}
+function reveal(){let h=hatchState;if(!h||h.phase!=='egg')return;h.phase='reveal';let x=h.results[h.i];sound(x.p.rarity==='SSR'?'ssr':'pop');let r=x.p.rarity;modal(`<div class="hatch-counter">第 ${h.i+1} / ${h.results.length} 次召喚</div><div style="font-size:15px;letter-spacing:6px;color:${rarityColors[r]}">✧ ✦ ✧</div><div class="pet-visual" style="filter:drop-shadow(0 0 17px ${rarityColors[r]}88)">${svgPet(x.p)}</div><div class="rarity ${r}">${r} · ${x.p.element} ${elements[x.p.element]}</div><h2>${esc(x.p.name)} ${x.newSpecies?'<span style="font-size:12px;color:#e08f73">NEW!</span>':''}</h2><p>${x.newSpecies?'新萌寵加入了你的森林！':x.universal?`已達五星，獲得 ${r} 通用碎片 ×1`:`重複召喚，獲得專屬碎片 ×${x.frag}`}</p><div class="modal-actions"><button class="primary" data-action="nextEgg">${h.i===h.results.length-1?'查看召喚結果':'下一顆魔法蛋'} →</button>${h.results.length>1?'<button class="secondary" data-action="skipHatch">略過其餘孵化</button>':''}</div>`,false,true)}
+function nextEgg(){if(!hatchState||hatchState.phase!=='reveal')return;hatchState.i++;showEgg()}
+function skipHatch(){if(!hatchState)return;hatchState.i=hatchState.results.length;hatchState.ssrQueue=hatchState.results.filter(x=>x.newSSR);hatchState.ssrIndex=0;hatchState.ssrQueue.length?showSSR():showSummary()}
+function showSSR(){let h=hatchState;if(h.ssrIndex>=h.ssrQueue.length)return showSummary();h.phase='ssr';let x=h.ssrQueue[h.ssrIndex];sound('ssr');modal(`<div class="celebrate"><div style="font-size:31px;color:#d3ad5c">✦ ✧ ✦</div><div class="pet-visual glow-ssr" style="width:240px;height:240px">${svgPet(x.p)}</div><div class="rarity SSR">SSR · 傳說</div><h2 style="color:#b88a3f">傳說萌寵降臨！</h2><h2>${esc(x.p.name)}</h2><p>森林的星光因你們的相遇而閃耀。<br>這是你首次遇見這位傳說夥伴！</p><div class="modal-actions"><button class="primary" data-action="nextSSR">收藏這份奇蹟 ✧</button></div></div>`,false,true)}
+function nextSSR(){hatchState.ssrIndex++;showSSR()}
+function showSummary(){let h=hatchState;h.phase='summary';let n=h.results.length;modal(`<div class="eyebrow">SUMMON RESULTS</div><h2>✧ 召喚完成 ✧</h2><p>這次召喚，森林送來了 ${n} 份奇遇。</p><div class="result-grid">${h.results.map(x=>`<div class="result-card ${x.p.rarity.toLowerCase()}">${x.newSpecies?'<span class="newtag">NEW!</span>':''}${svgPet(x.p)}<div class="petname">${esc(x.p.name)}</div><div class="rarity ${x.p.rarity}" style="font-size:11px">${x.p.rarity} · ${x.p.element}</div><div class="extra">${x.newSpecies?'首次獲得':x.universal?`${x.p.rarity}通用碎片 +1`:`專屬碎片 +${x.frag}`}</div></div>`).join('')}</div><div class="modal-actions"><button class="secondary" data-action="endSummon">返回召喚所</button><button class="primary" data-action="resummon" data-count="${n}">再召喚${n===10?'十次':'一次'} ✧</button></div>`,true,true)}
+function endSummon(){hatching=false;hatchState=null;closeModal(true);checkAchievements();render();showNextNotice()}
+function rates(){modal(`<div class="eyebrow">SUMMONING GUIDE</div><h2>✧ 魔法召喚機率 ✧</h2><p>每次抽取先決定稀有度，再從該稀有度的萌寵中等機率抽選。</p><table class="rate-table"><tr><td class="rarity N">N · 普通</td><td>45%</td></tr><tr><td class="rarity R">R · 稀有</td><td>35%</td></tr><tr><td class="rarity SR">SR · 超稀有</td><td>15%</td></tr><tr><td class="rarity SSR">SSR · 傳說</td><td>5%</td></tr></table><div class="info-strip" style="text-align:left"><b>✦ 十連祝福：</b>每十連至少有一隻 SR 以上。<br><b>✦ SSR 保底：</b>連續 49 抽未出 SSR，第 50 抽必得 SSR；單抽、十連共用計數，抽中 SSR 後歸零。<br><b>✦ 初次祝福：</b>帳號第一次召喚的第一抽，SR 75%／SSR 25%。<br><b>✦ 公平抽選：</b>同稀有度各物種等機率，不因是否已擁有而改變。</div><div class="modal-actions"><button class="primary" data-action="close">我知道了</button></div>`)}
+function source(){sourceReturn={page,taskTab,dexFilter:{...dexFilter},scroll:document.getElementById('main')?.scrollTop||0};modal(`<div style="font-size:47px">💎</div><h2>召喚石取得方式</h2><p>讓魔法持續閃耀的三種方式：</p><div class="info-strip" style="text-align:left"><b>☑ 每日任務：</b>完成登入、拜訪圖鑑、拜訪養成室，每天最多獲得 300 顆。<br><b>✦ 一次性成就：</b>達成召喚、收集及升星里程碑獲得獎勵。<br><b>♧ 商店免費禮包：</b>每天領取 200 顆。</div><p class="small">每日任務、成就及商店免費禮包皆已開放。</p><div class="modal-actions"><button class="secondary" data-action="close">關閉</button><button class="primary" data-action="gotoFuture" data-target="tasks">前往任務</button><button class="primary" data-action="gotoFuture" data-target="shop">前往商店</button></div>`)}
+function picker(){let ids=Object.keys(save.owned).filter(k=>save.owned[k]);if(!ids.length){toast('還沒有萌寵，先去召喚一位夥伴吧！');return}modal(`<div class="eyebrow">MY COMPANIONS</div><h2>選擇森林夥伴</h2><p>選一位萌寵陪你在魔法森林裡散步。</p><div class="picker-grid">${ids.map(k=>{let p=species[+k];return `<button class="pick-card" data-action="choose" data-id="${k}">${svgPet(p,save.form[k]==='evolved'&&(save.owned[k].stars||1)>=5)}<span>${esc(p.name)}</span><span class="rarity ${p.rarity}">${p.rarity}</span></button>`}).join('')}</div><div class="modal-actions"><button class="secondary" data-action="close">取消</button></div>`,true)}
+const talk={活潑:['一起去追閃閃發亮的種子吧！','今天的風聞起來像冒險！'],撒嬌:['可以再陪我一下下嗎？','你的身邊最溫暖了。'],勇敢:['下一座山丘也難不倒我！','有我在，別害怕！'],溫柔:['願今天的微風也溫柔待你。','我把最亮的泡泡送給你。'],神秘:['噓……月光知道一個秘密。','星星剛才偷偷對我眨眼。']};
+function interact(){let p=species[save.showcase];if(!p)return;let el=document.getElementById('showcase');el.classList.remove('bounce');void el.offsetWidth;el.classList.add('bounce');let opts=talk[p.personality]||['森林裡的每一天都值得珍惜。','遇見你，是今天最好的魔法。','聽！葉子正在唱歌。'];let s=document.getElementById('speech');s.textContent=opts[Math.floor(Math.random()*opts.length)];s.classList.remove('hidden');setTimeout(()=>s.classList.add('hidden'),3000);sound('pop')}
+function settings(){modal(`<div class="eyebrow">FOREST SETTINGS</div><h2>⚙ 森林設定</h2><div class="volume-row"><label>♫ 背景音樂</label><input type="range" min="0" max="100" value="${save.bgm}" data-volume="bgm"><output>${save.bgm}%</output></div><div class="volume-row"><label>✧ 音效</label><input type="range" min="0" max="100" value="${save.sfx}" data-volume="sfx"><output>${save.sfx}%</output></div><p class="small">音樂使用瀏覽器內建音效合成，不需要網路或外部音訊檔案。</p><div class="modal-actions"><button class="secondary" data-action="tutorial">重看新手引導</button><button class="secondary" data-action="reset1">重置遊戲資料</button><button class="primary" data-action="close">完成</button></div>`)}
+function reset1(){modal(`<div style="font-size:45px">🍂</div><h2>確定要重置森林嗎？</h2><p>所有萌寵、召喚石、抽卡紀錄及進度都會清除，且無法復原。</p><div class="modal-actions"><button class="secondary" data-action="settings">取消</button><button class="danger" data-action="reset2">繼續重置</button></div>`)}
+function reset2(){modal(`<h2>最後一次確認</h2><p>真的要重新開始嗎？重置後將回到 3,000 召喚石、0 隻萌寵的初始狀態。</p><div class="modal-actions"><button class="secondary" data-action="settings">保留進度</button><button class="danger" data-action="resetNow">確定清除所有進度</button></div>`)}
+function tutorial(){tutorialIndex=0;showTutorial()}
+const steps=[['🌲','歡迎來到魔法森林','在主城裡，你可以與展示的萌寵互動。森林會依照裝置時間變換白天與夜晚。'],['🥚','喚醒第一顆魔法蛋','前往「召喚」頁面，花費 100 召喚石單抽，或花費 900 召喚石進行十連。第一次召喚有 SR／SSR 特別祝福。'],['📖','收藏你的奇遇','新獲得的萌寵會加入圖鑑。你可以查看已獲得的萌寵故事，也能探索尚未發現的神祕剪影。'],['⭐','培育森林夥伴','重複召喚可取得碎片，可在養成室用來升星，五星還會解鎖進化造型。'],['☑','每天都有小禮物','每日任務、成就及商店都已開放，每天可以免費獲得召喚石！']];
+function showTutorial(){let s=steps[tutorialIndex];modal(`<div class="tutorial-counter">森林指南 · ${tutorialIndex+1} / ${steps.length}</div><div class="tutorial-icon">${s[0]}</div><h2>${s[1]}</h2><p class="tutorial-body">${s[2]}</p><div class="modal-actions"><button class="secondary" data-action="skipTutorial">略過引導</button><button class="primary" data-action="nextTutorial">${tutorialIndex===steps.length-1?'開始冒險 ✧':'下一步 →'}</button></div>`,false,true)}
+function finishTutorial(){save.tutorial=true;persist();closeModal(true);page='home';render()}
+// Browser audio playback needs a fresh user gesture after reopening a file.
+// Keep the melody scheduler running, and unlock/resume the audio context on interaction.
+function resumeForestMusic(){
+  if(!save.started||!save.bgm)return;
+  ensureAudio();
+  if(audioCtx?.state==='suspended')audioCtx.resume().catch(()=>{});
+  startMusic();
+}
+document.addEventListener('pointerdown',resumeForestMusic,{passive:true});
+document.addEventListener('keydown',resumeForestMusic);
+document.addEventListener('visibilitychange',()=>{if(!document.hidden){resumeForestMusic();resetDailyIfNeeded();updateTop();if(page==='tasks')render()}});
+function fitDetailModal(){
+  const shade=document.querySelector('.modal-shade');
+  const dialog=shade?.querySelector('.modal');
+  if(!dialog)return;
+  dialog.style.zoom='1';dialog.style.maxHeight='';dialog.style.overflow='';
+  if(!dialog.querySelector('.dex-detail'))return;
+  dialog.classList.add('detail-full-view');
+  const limit=window.innerHeight-30;
+  const height=dialog.scrollHeight;
+  if(height>limit){
+    const scale=Math.max(.48,Math.min(1,limit/height));
+    dialog.style.zoom=String(scale);
+    dialog.style.maxHeight='none';
+    dialog.style.overflow='hidden';
+  }
+}
+window.addEventListener('resize',()=>requestAnimationFrame(fitDetailModal));
+function start(){save.started=true;resetDailyIfNeeded();finishDaily('login');checkAchievements();persist();document.getElementById('intro').classList.add('hidden');startMusic();render();if(!save.tutorial)tutorial()}
+function ensureAudio(){if(!audioCtx)try{audioCtx=new(window.AudioContext||window.webkitAudioContext)()}catch{};if(audioCtx?.state==='suspended')audioCtx.resume()}
+function tone(freq,duration=.18,volume=.04,type='sine',delay=0){if(!audioCtx)return;let o=audioCtx.createOscillator(),g=audioCtx.createGain(),t=audioCtx.currentTime+delay;o.type=type;o.frequency.setValueAtTime(freq,t);g.gain.setValueAtTime(Math.max(.0001,volume),t);g.gain.exponentialRampToValueAtTime(.0001,t+duration);o.connect(g);g.connect(audioCtx.destination);o.start(t);o.stop(t+duration+.02)}
+function sound(kind){if(!save.sfx)return;ensureAudio();let v=save.sfx/100*.06;if(kind==='egg'){tone(410,.15,v);tone(540,.18,v,'sine',0.1)}else if(kind==='ssr'){[523,659,784,1047].forEach((f,i)=>tone(f,.55,v,'sine',i*.13))}else tone(620,.14,v)}
+function startMusic(){ensureAudio();if(musicTimer)return;let melody=[392,440,523,440,392,330,349,392,440,523,587,523,440,392,330,349];let idx=0;musicTimer=setInterval(()=>{if(!save.bgm||document.hidden||!audioCtx)return;let v=save.bgm/100*.012;tone(melody[idx%melody.length],.75,v,'sine');if(idx%4===0)tone(melody[idx%melody.length]/2,1.5,v*.5,'sine');idx++},650)}
+document.getElementById('sidebar').addEventListener('click',e=>{let b=e.target.closest('[data-page]');if(!b||hatching)return;let target=b.dataset.page;if(b.classList.contains('future')){toast('此頁面將在後續階段開放，敬請期待 ✧');return}page=target;if(page==='raise'){raiseOnly=false;finishDaily('raise')}if(page==='dex')finishDaily('dex');if(page==='tasks')taskTab='daily';render();sound('pop')});
+document.getElementById('main').addEventListener('click',e=>{if(e.target.closest('#showcase'))return interact();let dc=e.target.closest('[data-dex-open]');if(dc){openDex(+dc.dataset.dexOpen);return}let b=e.target.closest('[data-action]');if(!b)return;let a=b.dataset.action;if(a==='goto'){page=b.dataset.target;if(page==='raise'){raiseOnly=false;finishDaily('raise')}if(page==='dex')finishDaily('dex');if(page==='tasks')taskTab='daily';render()}if(a==='sourceBack'){if(sourceReturn){page=sourceReturn.page;taskTab=sourceReturn.taskTab;dexFilter={...sourceReturn.dexFilter};render();document.getElementById('main').scrollTop=sourceReturn.scroll;sourceReturn=null}}if(a==='shopClaim')claimShop();if(a==='shopTasks'){page='tasks';taskTab='daily';render()}if(a==='taskTab'){taskTab=b.dataset.tab;render()}if(a==='taskClaim')claimTasks(b.dataset.kind,b.dataset.id);if(a==='taskAll')claimTasks(b.dataset.kind);if(a==='raiseDex')openDex(save.raiseSelected,'raise');if(a==='raiseUpgrade')raiseUpgrade();if(a==='raiseForm')raiseForm(b.dataset.form);if(a==='pick')picker();if(a==='summon')confirmSummon(+b.dataset.count);if(a==='rates')rates()});
+document.getElementById('modalRoot').addEventListener('click',e=>{let b=e.target.closest('[data-action]');if(!b)return;let a=b.dataset.action;if(a==='sourceBack'){closeModal(true);if(sourceReturn){page=sourceReturn.page;taskTab=sourceReturn.taskTab;dexFilter={...sourceReturn.dexFilter};render();document.getElementById('main').scrollTop=sourceReturn.scroll;sourceReturn=null}}else if(a==='shopRewardClose'){closeModal(true);render()}else if(a==='dexClose'){closeModal(true);page=dexReturn==='raise'?'raise':'dex';render()}else if(a==='dexSwitch')dexSwitch(+b.dataset.id);else if(a==='setShowcase'){save.showcase=+b.dataset.id;persist();closeModal(true);render();toast('已設為主城夥伴 ✧')}else if(a==='taskRewardClose'){closeModal(true);render();showNextNotice()}else if(a==='raiseCommit')raiseCommit(+b.dataset.id);else if(a==='raiseSuccessClose'){closeModal(true);render()}else if(a==='raiseToSummon'){closeModal(true);page='summon';render()}else if(a==='close'){let back=dexReturn==='raise'&&!!document.querySelector('.dex-detail');closeModal();if(back){page='raise';render()}}else if(a==='commit')startSummon(+b.dataset.count);else if(a==='reveal')reveal();else if(a==='nextEgg')nextEgg();else if(a==='skipHatch')skipHatch();else if(a==='nextSSR')nextSSR();else if(a==='endSummon')endSummon();else if(a==='resummon'){let n=+b.dataset.count;endSummon();confirmSummon(n)}else if(a==='choose'){save.showcase=+b.dataset.id;persist();closeModal();render();toast(`${species[save.showcase].name} 來到森林中央陪伴你了！`)}else if(a==='source')source();else if(a==='gotoFuture'){closeModal();page=b.dataset.target;if(page==='tasks')taskTab='daily';render();if(sourceReturn){document.getElementById('main').insertAdjacentHTML('afterbegin',`<button class="source-back" data-action="sourceBack">← 返回${({home:'主城',summon:'召喚',dex:'圖鑑',raise:'養成',tasks:'任務',shop:'商店'})[sourceReturn.page]||'上一頁'}</button>`)}}else if(a==='settings')settings();else if(a==='reset1')reset1();else if(a==='reset2')reset2();else if(a==='resetNow'){save=defaultSave();save.started=true;save.tutorial=true;resetDailyIfNeeded();finishDaily('login');persist();closeModal(true);page='home';render();toast('森林已重新開始，祝你有新的奇遇！')}else if(a==='tutorial')tutorial();else if(a==='nextTutorial'){tutorialIndex++;if(tutorialIndex>=steps.length)finishTutorial();else showTutorial()}else if(a==='skipTutorial')finishTutorial()});
+document.getElementById('main').addEventListener('click',e=>{const b=e.target.closest('[data-raise-select]');if(b)selectRaise(+b.dataset.raiseSelect)});document.getElementById('main').addEventListener('change',e=>{if(e.target.matches('[data-raise-filter]')){raiseOnly=e.target.checked;render();return}if(!e.target.matches('[data-dex-filter]'))return;dexFilter[e.target.dataset.dexFilter]=e.target.value;render()});document.getElementById('modalRoot').addEventListener('click',e=>{let v=e.target.closest('[data-detail-pet]');if(!v)return;v.classList.remove('wiggle');void v.offsetWidth;v.classList.add('wiggle');sound('pop')});document.getElementById('modalRoot').addEventListener('input',e=>{if(!e.target.matches('[data-volume]'))return;let k=e.target.dataset.volume;save[k]=+e.target.value;e.target.nextElementSibling.textContent=save[k]+'%';persist();if(k==='bgm'&&save.bgm)startMusic();else if(k==='sfx')sound('pop')});
+document.getElementById('currency').addEventListener('click',source);document.getElementById('settingsBtn').addEventListener('click',settings);document.getElementById('startBtn').addEventListener('click',start);if(save.started){resetDailyIfNeeded();finishDaily('login');checkAchievements()}
+document.getElementById('introPets').innerHTML=[species[0],species[4],species[17]].map(p=>svgPet(p)).join('');if(!save.started)document.getElementById('intro').classList.remove('hidden');else startMusic();render();setInterval(()=>{if(page==='home'&&!document.querySelector('.modal-shade'))render()},60000);
+})();
+</script>
+</body></html>
