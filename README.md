@@ -1,6 +1,6 @@
 # vibe_coding_-
 
-遊戲網站： https://9800315-hub.github.io/
+遊戲網站： https://9800315-hub.github.io/vibe_coding_-/
 
 以下將《森之幻寵》整理成一份可以用於**課堂報告、專題文件，以及後續 Vibe Coding 開發**的遊戲規格書。
 
